@@ -1,10 +1,10 @@
-// Service Worker für pilzkarte_v2.html: hält die Seite und die Kartenbibliothek offline bereit
+// Service Worker für pilzkarte_v3.html: hält die Seite und die Kartenbibliothek offline bereit
 // und liefert vorgeladene Kartenkacheln aus dem Speicher.
-const SHELL='pk-shell-v2', TILES='pk-tiles-v1', PAGE='./pilzkarte_v2.html';
+const SHELL='pk-shell-v3', TILES='pk-tiles-v1', PAGE='./pilzkarte_v3.html';
 const LIBS=['https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css','https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(SHELL).then(c=>Promise.all(
-    [PAGE,...LIBS].map(u=>fetch(u,{mode:u.startsWith('http')?'cors':'same-origin'}).then(r=>r.ok&&c.put(u,r)).catch(()=>{}))
+    [PAGE,'./index.html',...LIBS].map(u=>fetch(u,{mode:u.startsWith('http')?'cors':'same-origin'}).then(r=>r.ok&&c.put(u,r)).catch(()=>{}))
   )));
   self.skipWaiting();
 });
