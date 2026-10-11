@@ -1,0 +1,1550 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pilzkarte">
+<meta name="theme-color" content="#1f2a1c">
+<title>Pilzkarte Hannover v9</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEkElEQVR4nO3dP24TQRiG8QmKcoNIKAoidVouQZk+56On5BK01EgghMQNqCgsRSPs19n17nz/5vl1CKLYs0++HW8W++r9430DTnnj/QAQF3FAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCBdez8AH88PN2u/5NP3vyMeSWRXM7wFwwUpLFE+l7JxDApCKRlKtTiMmzhWqZIicbg3caxAJbnjCNjEsbyVZI0jRRa9jInkiyNdFr1ciWSKI3UWvSyJpLlCWqaMlue5JJgcWZbyAsFHSPTJUbiMFv7ZxZ0cwRduXzFHSNDJMVUZLerzjTg5Aq7U/d1t/8efv/6M+C7R5kesOOJn0SufSKDTSq4yXv3bi8VZhyhxxFmRF0uOfe0+QsQRZC16y4964T7844iwCjG5r4zzhnTV8z/5MzpiV3jBMBi0OW2u+1PPybG8jPu7W3XAzvxVDY7zwy2OVWXs8m/y8urDf89xnvvGcGY+cSz8UVh7vAv34TI8HOIYVMaWr/rP2t3luN1oz74P6zjcX56lZrx6QfccWwaA8fCwGRsuTOPINTaWHHX7MizX0C6OXGUcnD/2XjPDbCUn/V/2yx0KsLmfIxqjODKOjV60Gp4fbgwuqwfdkCICiziyj42YDFY16OTYMsajnQLyGr7nYGyM28yO3nkEnRzt0kUMNTZO3k6Q6B6DsXFsHBsxf8exkM3NyUMHc9zJcZD0MnaNe1Cix9GiXsaewcB7SHefeGb3kG60aiTs8vgHbUszXT4P2EFtCU4r8DIqDi5vWBq02kwOSMSxv6Qvv48RByTiGKLGtRniGCXmLYarDLkIxkuVntkthrtfCst0ESypFEPiJE4rkIgDEnFAIg5IxAFpSBxx3mZ1HiPWfNTkoA9Lg1bb4t0EuSY2yOifQOu3miSUjSxHsv8b45PLGb5nZ/84zpikm7D7s9BxrBUkprAHe61ScfS+fvls+e0+fHyy/HY2uAgGiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIA1LZOCw/46Lk52m0wnFgO+KAVDkOm2lf9ZzSasfRxh+5wmW08nFgi/pxjPvhrj022gxxtDFHsXwZrfBHh560y+eJzpDFwRST48X24zpPGW22ydFbNUWmauLFvHHgVXOdVrAKcUC69n4AO3v3+Nb3Afz49tv3AewoRxzuh3y55Q81fkax4kgUwXbqycaJxj+OqYJYol8Q31A84yCLVx2WyCsRt1crlLGc11q5xRHnzBqf11p5nlYOz5kRcsa8e46D/vkTSvMOoucfR0+tS8lo4kSgxIpDWb6O7hnFP+TL5YhjuUrHxh2/eINEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQB6R8gvx2hz2vB0AAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEkElEQVR4nO3dP24TQRiG8QmKcoNIKAoidVouQZk+56On5BK01EgghMQNqCgsRSPs19n17nz/5vl1CKLYs0++HW8W++r9430DTnnj/QAQF3FAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCBdez8AH88PN2u/5NP3vyMeSWRXM7wFwwUpLFE+l7JxDApCKRlKtTiMmzhWqZIicbg3caxAJbnjCNjEsbyVZI0jRRa9jInkiyNdFr1ciWSKI3UWvSyJpLlCWqaMlue5JJgcWZbyAsFHSPTJUbiMFv7ZxZ0cwRduXzFHSNDJMVUZLerzjTg5Aq7U/d1t/8efv/6M+C7R5kesOOJn0SufSKDTSq4yXv3bi8VZhyhxxFmRF0uOfe0+QsQRZC16y4964T7844iwCjG5r4zzhnTV8z/5MzpiV3jBMBi0OW2u+1PPybG8jPu7W3XAzvxVDY7zwy2OVWXs8m/y8urDf89xnvvGcGY+cSz8UVh7vAv34TI8HOIYVMaWr/rP2t3luN1oz74P6zjcX56lZrx6QfccWwaA8fCwGRsuTOPINTaWHHX7MizX0C6OXGUcnD/2XjPDbCUn/V/2yx0KsLmfIxqjODKOjV60Gp4fbgwuqwfdkCICiziyj42YDFY16OTYMsajnQLyGr7nYGyM28yO3nkEnRzt0kUMNTZO3k6Q6B6DsXFsHBsxf8exkM3NyUMHc9zJcZD0MnaNe1Cix9GiXsaewcB7SHefeGb3kG60aiTs8vgHbUszXT4P2EFtCU4r8DIqDi5vWBq02kwOSMSxv6Qvv48RByTiGKLGtRniGCXmLYarDLkIxkuVntkthrtfCst0ESypFEPiJE4rkIgDEnFAIg5IxAFpSBxx3mZ1HiPWfNTkoA9Lg1bb4t0EuSY2yOifQOu3miSUjSxHsv8b45PLGb5nZ/84zpikm7D7s9BxrBUkprAHe61ScfS+fvls+e0+fHyy/HY2uAgGiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIA1LZOCw/46Lk52m0wnFgO+KAVDkOm2lf9ZzSasfRxh+5wmW08nFgi/pxjPvhrj022gxxtDFHsXwZrfBHh560y+eJzpDFwRST48X24zpPGW22ydFbNUWmauLFvHHgVXOdVrAKcUC69n4AO3v3+Nb3Afz49tv3AewoRxzuh3y55Q81fkax4kgUwXbqycaJxj+OqYJYol8Q31A84yCLVx2WyCsRt1crlLGc11q5xRHnzBqf11p5nlYOz5kRcsa8e46D/vkTSvMOoucfR0+tS8lo4kSgxIpDWb6O7hnFP+TL5YhjuUrHxh2/eINEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQB6R8gvx2hz2vB0AAAAABJRU5ErkJggg==">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+/* Layout: Vollbildkarte, Statuszeile oben, Daumen-Dock unten, Bottom-Sheets für alles andere */
+:root{
+  --bg:#f2f4ef; --panel:#ffffff; --fg:#1b2418; --muted:#5b6656; --line:#d9ded3;
+  --accent:#7a4a22; --accent-fg:#ffffff;
+  --good:#2f9e44; --mid:#d9a400; --low:#e8590c; --unk:#8a9184; --bad:#c92a2a; --me:#1c7ed6;
+  --shadow:0 6px 24px rgba(20,30,15,.18);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141912; --panel:#1d241a; --fg:#e6ebe1; --muted:#9aa594; --line:#33402e;
+  --accent:#d39a5e; --accent-fg:#1b1208; --shadow:0 6px 24px rgba(0,0,0,.5); color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141912; --panel:#1d241a; --fg:#e6ebe1; --muted:#9aa594; --line:#33402e;
+  --accent:#d39a5e; --accent-fg:#1b1208; --shadow:0 6px 24px rgba(0,0,0,.5); color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.4 var(--font);-webkit-tap-highlight-color:transparent;overflow:hidden}
+#map{position:fixed;inset:0;background:#cfd6c8}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--me);outline-offset:2px}
+
+/* Statusleiste oben */
+.top{position:fixed;left:0;right:0;top:0;z-index:1000;padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 0;display:flex;gap:8px;align-items:flex-start;pointer-events:none}
+.chip{pointer-events:auto;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 12px;box-shadow:var(--shadow);font-size:13px;display:flex;align-items:center;gap:6px;min-height:34px}
+.chip b{font-weight:650}
+.brand{font-weight:700;letter-spacing:.01em}
+.brand .ver{font-weight:500;font-size:11px;color:var(--muted)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.spacer{flex:1}
+#rainChip{cursor:pointer;max-width:56vw}
+#rainChip .lvl{width:10px;height:10px;border-radius:50%;background:var(--unk);flex:none}
+#dataChip{font-size:12px;color:var(--muted)}
+.topcol{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+
+#warn{position:fixed;left:12px;right:12px;top:calc(env(safe-area-inset-top,0px) + 56px);z-index:1100;background:var(--bad);color:#fff;border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);font-weight:600}
+#warn small{display:block;font-weight:400;opacity:.9}
+#banner{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 96px);z-index:1100;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center}
+#banner p{margin:0;flex:1;min-width:0}
+
+/* Legende */
+#legend{position:fixed;left:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 92px);z-index:900;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 10px;box-shadow:var(--shadow);font-size:12px}
+#legend .t{font-weight:650;margin-bottom:4px}
+#legend .r{display:flex;align-items:center;gap:6px}
+#legend i{width:14px;height:10px;border-radius:3px;display:inline-block}
+
+/* Auto-Kompass */
+#carNav{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 92px);z-index:900;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 12px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px}
+#carArrow{width:34px;height:34px;transition:transform .25s}
+#carNav .d{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+#carNav .s{font-size:11px;color:var(--muted)}
+
+/* Dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:1000;padding:8px 10px calc(env(safe-area-inset-bottom,0px) + 8px);display:flex;justify-content:center;pointer-events:none}
+.dock .bar{pointer-events:auto;display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:6px;box-shadow:var(--shadow);max-width:460px;width:100%}
+.db{flex:1;min-width:0;border:0;background:transparent;border-radius:16px;padding:6px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--muted);cursor:pointer}
+.db svg{width:24px;height:24px;stroke:var(--fg);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.db.on{color:var(--me)} .db.on svg{stroke:var(--me)}
+.db.primary{background:var(--accent);color:var(--accent-fg)} .db.primary svg{stroke:var(--accent-fg)}
+.db:active{transform:scale(.96)}
+
+/* Sheets */
+#scrim{position:fixed;inset:0;background:rgba(10,15,8,.35);z-index:1200}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:1300;background:var(--panel);color:var(--fg);border-radius:20px 20px 0 0;box-shadow:var(--shadow);max-height:82vh;overflow:auto;padding:10px 16px calc(env(safe-area-inset-bottom,0px) + 16px);max-width:560px;margin:0 auto}
+.sheet .grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 8px}
+.sheet h2{font-size:18px;margin:4px 0 10px;text-wrap:balance}
+.sheet h3{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:16px 0 6px;font-weight:650}
+.sheet p{margin:6px 0}
+.hint{font-size:13px;color:var(--muted)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row>*{min-width:0}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:600}
+.btn.pri{background:var(--accent);color:var(--accent-fg);border-color:transparent}
+.btn.danger{background:var(--bad);color:#fff;border-color:transparent}
+.btn.small{padding:6px 10px;font-size:13px}
+a.btn{display:inline-block;text-decoration:none;color:inherit}
+.navrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;padding-top:6px;border-top:1px solid var(--line)}
+.navrow span{color:var(--muted);font-size:12px;width:100%}
+.btn:disabled{opacity:.5}
+.seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.seg button{flex:1;border:0;background:var(--bg);padding:9px 6px;cursor:pointer;font-size:13px}
+.seg button.on{background:var(--accent);color:var(--accent-fg);font-weight:650}
+.opt{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.opt:last-child{border-bottom:0}
+.opt input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+.opt span{flex:1;min-width:0}
+.opt small{display:block;color:var(--muted);font-size:12px}
+.area{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.area .n{flex:1;min-width:0}
+.area .n b{display:block}
+.area .n small{color:var(--muted)}
+textarea,input[type=text]{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:12px;padding:10px;font:inherit}
+textarea{min-height:64px;resize:vertical}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:8px 12px;cursor:pointer}
+.chips button.on{background:var(--accent);color:var(--accent-fg);border-color:transparent;font-weight:650}
+.find{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.find .n{flex:1;min-width:0}
+.find .n small{display:block;color:var(--muted)}
+.badge{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px;flex:none;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.prog{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-variant-numeric:tabular-nums}
+.rainbars{display:flex;gap:4px;align-items:flex-end;height:70px;margin-top:8px}
+.rainbars div{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:var(--muted);min-width:0}
+.rainbars span{display:block;width:100%;background:var(--me);border-radius:3px 3px 0 0;min-height:1px}
+
+/* Karte */
+.leaflet-container{font:13px/1.4 var(--font)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel);color:var(--fg)}
+.leaflet-popup-content{margin:12px 14px}
+.leaflet-popup-content b{font-size:14px}
+.leaflet-control-attribution{font-size:10px;background:rgba(255,255,255,.75)!important}
+.leaflet-control-zoom{display:none}
+.meDot{width:18px;height:18px;border-radius:50%;background:var(--me);border:3px solid #fff;box-shadow:0 0 0 2px rgba(28,126,214,.35),0 1px 4px rgba(0,0,0,.4)}
+.meWrap{position:relative;width:18px;height:18px}
+.meCone{position:absolute;left:-11px;top:-30px;width:40px;height:40px;transform-origin:20px 39px;display:none}
+.carIcon{width:30px;height:30px;border-radius:9px;background:#212529;color:#fff;display:grid;place-items:center;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.4)}
+.carIcon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+.satImg{image-rendering:pixelated;image-rendering:crisp-edges}
+.pstat{margin-top:6px;font-size:12px;line-height:1.35}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-left:4px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--accent);font:italic 700 13px Georgia,serif;cursor:pointer;vertical-align:middle;padding:0}
+.ibtn.on{background:var(--accent);color:var(--accent-fg);border-color:transparent}
+.why{display:none;margin:6px 0 2px;padding:8px 10px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:12px;line-height:1.4}
+.why.on{display:block}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+body.popopen #legend{display:none}
+.why ul{margin:4px 0 0;padding-left:16px}
+.why li{margin:2px 0}
+.pstat .w{color:var(--bad);font-weight:650}
+.pstat .m{color:var(--accent);font-weight:650}
+.note{font-size:12px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:8px 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="map" aria-label="Karte"></div>
+
+<div class="top">
+  <div class="chip brand"><span class="dot"></span>Pilzkarte <span class="ver">v9</span></div>
+  <div class="spacer"></div>
+  <div class="topcol">
+    <button class="chip" id="rainChip" type="button"><span class="lvl" id="rainLvl"></span><span id="rainTxt">Regen: –</span></button>
+    <div class="chip" id="dataChip">Wald-Daten: –</div>
+  </div>
+</div>
+
+<div id="warn" hidden>Du bist in einem Naturschutzgebiet<small id="warnName"></small><small>Hier ist Pilzesammeln verboten und die Wege dürfen nicht verlassen werden.</small></div>
+<div id="banner" hidden><p id="bannerTxt"></p><button class="btn pri small" id="bannerYes" type="button">Ja</button><button class="btn small" id="bannerNo" type="button">Nein</button></div>
+
+<div id="legend" hidden>
+  <div class="t" id="legendT">Eignung Steinpilz</div>
+  <div class="r"><i style="background:var(--good)"></i>hoch</div>
+  <div class="r"><i style="background:var(--mid)"></i>mittel</div>
+  <div class="r"><i style="background:var(--low)"></i>gering</div>
+  <div class="r"><i style="background:var(--unk)"></i>Waldtyp unbekannt</div>
+  <div class="r" id="legSat"><i style="background:repeating-linear-gradient(90deg,var(--good) 0 2px,var(--mid) 2px 4px)"></i>Wald nur im Satellit</div>
+  <div class="r"><i style="background:repeating-linear-gradient(45deg,var(--bad) 0 3px,transparent 3px 6px)"></i>NSG, verboten</div>
+  <div class="r" id="legFi" hidden><i style="background:#1565c0"></i>Fichtenwald</div>
+  <div class="r" id="legKi" hidden><i style="background:#9c27b0"></i>Kiefernwald</div>
+</div>
+
+<div id="carNav" hidden>
+  <svg id="carArrow" viewBox="0 0 34 34" aria-hidden="true"><path d="M17 3 L27 29 L17 23 L7 29 Z" fill="var(--accent)"/></svg>
+  <div><div class="d" id="carDist">–</div><div class="s" id="carSub">zum Auto</div></div>
+</div>
+
+<nav class="dock"><div class="bar">
+  <button class="db" id="bLayers" type="button"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 13 10 5 10-5"/><path d="m2 17.5 10 5 10-5"/></svg>Ebenen</button>
+  <button class="db" id="bAreas" type="button"><svg viewBox="0 0 24 24"><path d="M3 20 9 8l4 7 3-4 5 9Z"/><circle cx="17" cy="5" r="2"/></svg>Gebiete</button>
+  <button class="db primary" id="bFind" type="button"><svg viewBox="0 0 24 24"><path d="M4 11a8 6 0 0 1 16 0Z"/><path d="M10 11v6a2 2 0 0 0 4 0v-6"/></svg>Fund +</button>
+  <button class="db" id="bCar" type="button"><svg viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v3H3z"/><circle cx="7.5" cy="13" r=".8"/><circle cx="16.5" cy="13" r=".8"/></svg>Auto</button>
+  <button class="db" id="bMe" type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Standort</button>
+  <button class="db" id="bMenu" type="button"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>Mehr</button>
+</div></nav>
+
+<div id="scrim" hidden></div>
+
+<!-- Ebenen -->
+<section class="sheet" id="sLayers" hidden>
+  <div class="grab"></div>
+  <h2>Ebenen</h2>
+  <h3>Grundkarte</h3>
+  <div class="seg" id="baseSeg">
+    <button type="button" data-b="osm">Karte</button>
+    <button type="button" data-b="sat">Satellit</button>
+    <button type="button" data-b="dop">Luftbild NI</button>
+    <button type="button" data-b="topo">Topo</button>
+    <button type="button" data-b="s2">Sentinel 2023</button>
+  </div>
+  <h3>Eignungsampel</h3>
+  <label class="opt"><input type="checkbox" id="oAmpel" checked><span>Ampel anzeigen<small>Waldtyp aus OpenStreetMap, fehlende Typen aus Copernicus-Satellitendaten, ab Zoomstufe 12</small></span></label>
+  <label class="opt"><input type="checkbox" id="oSatFill" checked><span>Wald einfärben, den OpenStreetMap nicht kennt<small>Laub-/Nadelwald-Pixel aus dem Satellit in Ampelfarben</small></span></label>
+  <div class="seg" id="modeSeg">
+    <button type="button" data-m="s">Steinpilz</button>
+    <button type="button" data-m="m">Marone</button>
+    <button type="button" data-m="b">Beide</button>
+  </div>
+  <p class="hint">Deckkraft</p>
+  <input type="range" id="opac" min="15" max="85" value="45" aria-label="Deckkraft der Ampel">
+  <h3>Waldtyp</h3>
+  <label class="opt"><input type="checkbox" id="oFi"><span><i class="sw" style="background:#1565c0"></i>Fichtenwälder<small>Thünen-Baumartenkarte 2017/18, 10 m, ab Zoomstufe 10: blau, wo die Fichte vorherrscht</small></span></label>
+  <label class="opt"><input type="checkbox" id="oKi"><span><i class="sw" style="background:#9c27b0"></i>Kiefernwälder<small>Thünen-Baumartenkarte 2017/18, 10 m, ab Zoomstufe 10: lila, wo die Kiefer vorherrscht</small></span></label>
+  <label class="opt"><input type="checkbox" id="oDlt"><span>Laub/Nadel (Satellit)<small>Copernicus Dominant Leaf Type 2018, 10 m: hellgrün Laub, dunkelgrün Nadel, grau kein Baum</small></span></label>
+  <p class="note">Die Satellitendaten sind von 2018. Seitdem sind durch Dürre und Borkenkäfer viele Fichtenbestände abgestorben oder gefällt. Zum Gegenprüfen die Grundkarte „Sentinel 2023“ nehmen: braune oder kahle Flecken im Wald sind meist Kalamitätsflächen.</p>
+  <h3>Schutzgebiete</h3>
+  <div id="nlwknList"></div>
+  <label class="opt"><input type="checkbox" id="oNsg" checked><span>Naturschutzgebiete aus OpenStreetMap (rot schraffiert)<small>Auch offline verfügbar, Grundlage der Warnung ohne Netz</small></span></label>
+  <p class="hint">Amtliche Flächen: NLWKN Umweltkarten. Die Warnung fragt online das amtliche NSG ab. Verbindlich ist nur die Beschilderung vor Ort und die Verordnung.</p>
+  <h3>Eigene Daten</h3>
+  <label class="opt"><input type="checkbox" id="oFinds" checked><span>Fundstellen</span></label>
+  <h3>Mehr Detail</h3>
+  <div class="row">
+    <a class="btn small" href="https://atlas.thuenen.de" target="_blank" rel="noopener">Thünen-Baumartenkarte</a>
+    <a class="btn small" href="https://www.umweltkarten-niedersachsen.de/Umweltkarten/?topic=Natur&lang=de" target="_blank" rel="noopener">Umweltkarten NI</a>
+  </div>
+</section>
+
+<!-- Gebiete / Pilztag -->
+<section class="sheet" id="sAreas" hidden>
+  <div class="grab"></div>
+  <h2>Gebiete</h2>
+  <p class="hint">„Hin“ springt zum Gebiet. „Pilztag“ springt hin, lädt Wald-Daten, Regen und Kartenkacheln für unterwegs und fragt bei der Ankunft nach dem Parkplatz.</p>
+  <div id="areaList"></div>
+</section>
+
+<!-- Fund -->
+<section class="sheet" id="sFind" hidden>
+  <div class="grab"></div>
+  <h2 id="findTitle">Fund eintragen</h2>
+  <p class="hint" id="findSrc"></p>
+  <h3>Pilzart</h3>
+  <div class="chips" id="artChips"></div>
+  <h3>Menge</h3>
+  <div class="chips" id="qtyChips"></div>
+  <h3>Notiz</h3>
+  <textarea id="findNote" placeholder="z. B. unter Fichte am Weg, Moos, Nordhang"></textarea>
+  <div class="row" style="margin-top:12px">
+    <button class="btn pri" id="findSave" type="button">Speichern</button>
+    <button class="btn" id="findCancel" type="button">Abbrechen</button>
+  </div>
+</section>
+
+<!-- Auto -->
+<section class="sheet" id="sCar" hidden>
+  <div class="grab"></div>
+  <h2>Auto</h2>
+  <p id="carInfo" class="hint"></p>
+  <div class="row">
+    <button class="btn pri" id="carSet" type="button">Auto hier merken</button>
+    <button class="btn" id="carShow" type="button">Auf Karte zeigen</button>
+  </div>
+  <div class="row" style="margin-top:8px">
+    <button class="btn" id="compassBtn" type="button">Kompass aktivieren</button>
+    <button class="btn" id="carDel" type="button">Auto-Pin entfernen</button>
+  </div>
+  <p class="hint">Ohne Kompass zeigt der Pfeil nach Norden ausgerichtet, also wie auf der Karte.</p>
+</section>
+
+<!-- Mehr -->
+<section class="sheet" id="sMenu" hidden>
+  <div class="grab"></div>
+  <h2>Mehr</h2>
+  <h3>Für unterwegs</h3>
+  <p class="hint">Lädt die Kartenkacheln des aktuellen Ausschnitts, die Wald-Daten und den Regen, damit die Karte auch ohne Netz funktioniert.</p>
+  <label class="opt"><input type="checkbox" id="pOsm" checked><span>Karte</span></label>
+  <label class="opt"><input type="checkbox" id="pSat"><span>Satellit</span></label>
+  <label class="opt"><input type="checkbox" id="pDop"><span>Luftbild NI</span></label>
+  <label class="opt"><input type="checkbox" id="pTopo"><span>Topo</span></label>
+  <label class="opt"><input type="checkbox" id="pS2"><span>Sentinel 2023</span></label>
+  <label class="opt"><input type="checkbox" id="pArc" checked><span>Eingeschaltete Zusatzebenen<small>Schutzgebiete und Laub/Nadel, soweit in „Ebenen“ aktiv</small></span></label>
+  <div class="row" style="margin:8px 0"><button class="btn pri" id="preBtn" type="button">Ausschnitt vorladen</button><button class="btn" id="preClear" type="button">Speicher leeren</button></div>
+  <div class="prog" id="preProg" hidden><i></i></div>
+  <p class="hint" id="preTxt"></p>
+  <h3>Fundstellen <span id="findCount"></span></h3>
+  <div id="findList"></div>
+  <h3>Sichern</h3>
+  <div class="row">
+    <button class="btn" id="expBtn" type="button">Exportieren</button>
+    <label class="btn" for="impFile">Importieren</label>
+    <input type="file" id="impFile" accept=".json,application/json" hidden>
+  </div>
+  <p class="hint" id="ioTxt">Sichert Fundstellen und Auto-Pin als JSON-Datei, zum Beispiel in „Dateien“.</p>
+  <h3>Hinweise</h3>
+  <p class="hint">Die Ampel zeigt, wo Baumart und Waldtyp passen, nicht wo gerade Pilze stehen. Waldtypen stammen aus OpenStreetMap; wo dort nichts erfasst ist, aus Copernicus-Satellitendaten von 2018. Seitdem abgestorbene oder gefällte Fichten sind darin nicht enthalten, also im Satellitenbild gegenprüfen. Der Kahlschlag-Check zeigt nur Baumverluste 2015–2018. Höchstens etwa 1–2 kg pro Person und Tag, nur für den Eigenbedarf. Nur Pilze essen, die sicher bestimmt sind.</p>
+  <p class="hint">Kartendaten © OpenStreetMap-Mitwirkende · Satellit © Esri · Luftbild NI © LGLN (2026), CC BY 4.0 (Orthofotos 20 cm, nur Niedersachsen) · Sentinel 2023 © EOX (s2maps.eu) · Topo © OpenTopoMap · Schutzgebiete © NLWKN · Fichte/Kiefer © Thünen-Institut, Blickensdörfer et al. (2024), Dominant Tree Species 2017/2018 · Laub/Nadel und Baumverlust © Copernicus Land Monitoring Service (EEA) · Wetter Open-Meteo</p>
+  <p class="hint">Version 9 vom 11.10.2026</p>
+</section>
+
+<!-- Regen -->
+<section class="sheet" id="sRain" hidden>
+  <div class="grab"></div>
+  <h2>Regen und Bedingungen</h2>
+  <p id="rainVerdict"></p>
+  <div class="rainbars" id="rainBars"></div>
+  <dl class="kv" id="rainKv" style="margin-top:12px"></dl>
+  <p class="hint">Faustregel: Röhrlinge erscheinen etwa 6 Tage nach ergiebigem Regen, nach einer Trockenphase eher erst nach 10 bis 14 Tagen, weil der Boden erst durchfeuchten muss. Ort: Kartenmitte bzw. dein Standort.</p>
+  <div class="row"><button class="btn" id="rainReload" type="button">Neu laden</button></div>
+</section>
+
+<script>
+(function(){
+'use strict';
+if(!window.L){document.body.insertAdjacentHTML('beforeend','<p style="position:fixed;inset:40% 16px auto;z-index:9999;background:#fff;color:#000;padding:16px;border-radius:12px">Die Kartenbibliothek konnte nicht geladen werden. Bitte einmal mit Internetverbindung öffnen.</p>');return;}
+
+/* ---------- Speicher ---------- */
+const store={
+  get(k,d){try{const v=localStorage.getItem('pk_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem('pk_'+k,JSON.stringify(v));return true}catch(e){return false}},
+  del(k){try{localStorage.removeItem('pk_'+k)}catch(e){}}
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- Konstanten ---------- */
+const AREAS=[
+  {id:'rehburg',name:'Rehburger Berge',sub:'Buche, Eiche, Fichte auf Sandstein · ca. 40 Min.',c:[52.432,9.222],z:13},
+  {id:'deister',name:'Deister',sub:'Buche mit Fichtenparzellen · ca. 35 Min.',c:[52.262,9.480],z:12},
+  {id:'grinder',name:'Grinderwald / Schneeren',sub:'Kiefernforst auf Sand · ca. 40 Min.',c:[52.565,9.330],z:12},
+  {id:'wietze',name:'Wietze / Hambühren',sub:'Kiefer, Fichte, Birke · ca. 40 Min.',c:[52.640,9.880],z:12},
+  {id:'suedheide',name:'Südheide (Müden/Örtze)',sub:'Kiefern- und Fichtenforste · ca. 1 Std.',c:[52.875,10.110],z:12}
+];
+const ARTS=[
+  {id:'steinpilz',name:'Steinpilz',col:'#7a4a22',l:'S'},
+  {id:'marone',name:'Marone',col:'#4e342e',l:'M'},
+  {id:'pfifferling',name:'Pfifferling',col:'#e09f00',l:'P'},
+  {id:'birkenpilz',name:'Birkenpilz',col:'#6d6875',l:'B'},
+  {id:'krause',name:'Krause Glucke',col:'#b08a3e',l:'K'},
+  {id:'sonstige',name:'Sonstige',col:'#495057',l:'?'}
+];
+const QTYS=['1','2–5','6–15','viele'];
+const BASES={
+  osm:{url:'https://tile.openstreetmap.org/{z}/{x}/{y}.png',max:19,attr:'© OpenStreetMap-Mitwirkende'},
+  sat:{url:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',max:19,attr:'Bild © Esri, Maxar, Earthstar Geographics'},
+  topo:{url:'https://a.tile.opentopomap.org/{z}/{x}/{y}.png',max:17,attr:'© OpenTopoMap (CC-BY-SA), © OpenStreetMap'},
+  dop:{url:'https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/jpeg&BBOX={bbox}',max:19,attr:'Luftbild © LGLN (2026), CC BY 4.0'},
+  s2:{url:'https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2023_3857/default/g/{z}/{y}/{x}.jpg',max:15,attr:'Sentinel-2 cloudless 2023 © EOX IT Services (CC BY-NC-SA 4.0), enthält Copernicus-Sentinel-Daten 2023'}
+};
+const CLMS='https://copernicus.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/';
+const DLT_URL=CLMS+'HRL_DominantLeafType2018/ImageServer';
+const TCC_URL=CLMS+'HRL_TreeCoverChangeMask_15_18/ImageServer';
+const NLWKN_URL='https://www.umweltkarten-niedersachsen.de/arcgis/rest/services/Natur_wms/MapServer';
+const NLWKN_LAYERS=[
+  {id:270,title:'Naturschutzgebiete (NSG)',sub:'Sammeln verboten, Wege nicht verlassen',on:true},
+  {id:272,title:'Landschaftsschutzgebiete (LSG)',sub:'Sammeln meist erlaubt, Verordnung beachten',on:false},
+  {id:14,title:'FFH-Gebiete',sub:'Natura 2000',on:false},
+  {id:15,title:'EU-Vogelschutzgebiete',sub:'Natura 2000',on:false},
+  {id:220,title:'Naturparke',sub:'Sammeln in der Regel erlaubt',on:false}
+];
+/* Farben im Copernicus-PNG -> Klasse 1 kein Baum, 2 Laub, 3 Nadel (0 keine Daten) */
+const DLT_COLORS=[[240,240,240,1],[70,158,74,2],[28,92,36,3]];
+/* Thünen-Baumartenkarte 2017/18: Klasse -> Farbe im PNG, Eignung je Baumart (s Steinpilz, m Marone, p Partnerbaum) */
+const THUENEN_BASE='https://atlas.thuenen.de/geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=geonode:Dominant_Species_Class&STYLES=&SRS=EPSG:3857&FORMAT=image/png&TRANSPARENT=true';
+const SP_CLASSES={
+  8:{n:'Fichte',k:'fichte',wald:'Fichtenwald',s:.85,m:.9,p:1,col:[205,134,115]},
+  9:{n:'Kiefer',k:'kiefer',wald:'Kiefernwald',s:.6,m:.85,p:1,col:[222,19,23]},
+  4:{n:'Douglasie',k:'douglasie',wald:'Douglasienwald',s:.5,m:.6,col:[231,236,71]},
+  14:{n:'Tanne',k:'tanne',wald:'Tannenwald',s:.6,m:.6,col:[255,213,77]},
+  10:{n:'Lärche',k:'laerche',wald:'Lärchenwald',s:.45,m:.6,col:[223,63,234]},
+  3:{n:'Buche',k:'buche',wald:'Buchenwald',s:.75,m:.5,p:1,col:[73,202,69]},
+  5:{n:'Eiche',k:'eiche',wald:'Eichenwald',s:.75,m:.35,p:1,col:[26,118,28]},
+  6:{n:'Erle',k:'erle',wald:'Erlenwald',s:.1,m:.1,col:[103,132,77]},
+  2:{n:'Birke',k:'birke',wald:'Birkenwald',s:.45,m:.3,col:[209,239,226]},
+  16:{n:'anderes Laubholz',k:'laubsonst',wald:'Laubwald',s:.25,m:.15,col:[37,160,237]},
+  17:{n:'Pappel/Weide',k:'laubsonst',wald:'Weichlaubwald',s:.15,m:.1,col:[142,188,217]}
+};
+const SAT_SCORE={2:{k:'laub',s:.62,m:.4,label:'Laubwald'},3:{k:'nadel',s:.72,m:.85,label:'Nadelwald'}};
+const SAT_M_PER_PX=20;
+const SAT_MIN_HA=.5;// zusammenhängender Raster-Wald außerhalb OSM erst ab dieser Größe
+const OVERPASS=['https://overpass-api.de/api/interpreter','https://maps.mail.ru/osm/tools/overpass/api/interpreter','https://overpass.kumi.systems/api/interpreter','https://overpass.private.coffee/api/interpreter'];
+const TILE_CACHE='pk-tiles-v1';
+const MAX_TILES=1500;
+
+/* ---------- Status ---------- */
+const S={
+  base:store.get('base','osm'),
+  mode:store.get('mode','s'),
+  opac:store.get('opac',45),
+  finds:store.get('finds',[]),
+  car:store.get('car',null),
+  me:null, heading:null, follow:false,
+  forests:new Map(), nsg:new Map(), loaded:store.get('loadedBoxes',[]),
+  pilztag:null
+};
+
+/* ---------- Karte ---------- */
+const start=store.get('view',{c:AREAS[0].c,z:AREAS[0].z});
+/* Popups nicht unter die Chips oben und die Leiste unten schieben */
+L.Popup.mergeOptions({autoPanPaddingTopLeft:L.point(12,130),autoPanPaddingBottomRight:L.point(12,110)});
+const map=L.map('map',{zoomControl:false,tapHold:true,attributionControl:true,preferCanvas:true,maxZoom:19}).setView(start.c,start.z);
+map.attributionControl.setPrefix(false);
+
+/* Kachel-Layer mit eigenem Offline-Cache */
+async function tileFromCache(url){
+  try{
+    if(!('caches' in window))return null;
+    const c=await caches.open(TILE_CACHE);const r=await c.match(url);
+    if(!r||r.type==='opaque')return null;
+    return URL.createObjectURL(await r.blob());
+  }catch(e){return null}
+}
+/* Kachel-URL mit {bbox} (WMS in EPSG:3857), z. B. Luftbild LGLN */
+function fillTileUrl(tpl,x,y,z){
+  if(tpl.indexOf('{bbox}')<0)return tpl.replace('{z}',z).replace('{x}',x).replace('{y}',y);
+  const M=20037508.342789244,r=2*M/2**z,x0=-M+x*r,y1=M-y*r;
+  return tpl.replace('{bbox}',[x0,y1-r,x0+r,y1].map(v=>v.toFixed(2)).join(','));
+}
+const CachedTiles=L.TileLayer.extend({
+  getTileUrl(c){return this._url.indexOf('{bbox}')<0?L.TileLayer.prototype.getTileUrl.call(this,c):fillTileUrl(this._url,c.x,c.y,this._getZoomForUrl())},
+  createTile(coords,done){
+    const img=document.createElement('img');img.alt='';img.setAttribute('role','presentation');
+    L.DomEvent.on(img,'load',L.Util.bind(this._tileOnLoad,this,done,img));
+    L.DomEvent.on(img,'error',L.Util.bind(this._tileOnError,this,done,img));
+    const url=this.getTileUrl(coords);
+    tileFromCache(url).then(b=>{if(b){img._blob=b;img.src=b}else img.src=url});
+    return img;
+  }
+});
+const baseLayers={};
+for(const k in BASES){
+  const b=BASES[k];
+  baseLayers[k]=new CachedTiles(b.url,{maxNativeZoom:b.max,maxZoom:19,attribution:b.attr});
+  baseLayers[k].on('tileunload',e=>{if(e.tile._blob)URL.revokeObjectURL(e.tile._blob)});
+}
+let curBase=null;
+function setBase(k){
+  if(!BASES[k])k='osm';
+  if(curBase)map.removeLayer(curBase);
+  curBase=baseLayers[k].addTo(map);curBase.bringToBack();
+  S.base=k;store.set('base',k);
+  document.querySelectorAll('#baseSeg button').forEach(b=>b.classList.toggle('on',b.dataset.b===k));
+}
+setBase(S.base);
+
+/* Panes für Reihenfolge */
+map.createPane('dlt').style.zIndex=405;
+map.createPane('ampel').style.zIndex=410;
+map.createPane('wms').style.zIndex=420;
+map.createPane('nsg').style.zIndex=430;
+map.createPane('finds').style.zIndex=640;
+
+/* ---------- Geometrie-Helfer ---------- */
+const R=6371000,rad=d=>d*Math.PI/180,deg=r=>r*180/Math.PI;
+/* Web-Mercator (EPSG:3857) */
+const MR=6378137,MMAX=Math.PI*MR;
+const toM=(lat,lng)=>[rad(lng)*MR,MR*Math.log(Math.tan(Math.PI/4+rad(lat)/2))];
+const fromM=(x,y)=>[deg(2*Math.atan(Math.exp(y/MR))-Math.PI/2),deg(x/MR)];
+function tileBBox(x,y,z){const res=2*MMAX/2**z;const minx=-MMAX+x*res,maxy=MMAX-y*res;return [minx,maxy-res,minx+res,maxy]}
+
+/* ArcGIS-Export als Kachel-Layer: BBox je Kachel in 3857 */
+const ArcTiles=CachedTiles.extend({
+  initialize(base,opts){this._base=base;L.TileLayer.prototype.initialize.call(this,'',opts)},
+  getTileUrl(c){return this._base+'&bbox='+tileBBox(c.x,c.y,c.z).map(v=>v.toFixed(2)).join(',')}
+});
+function arcLayer(base,opts){
+  const l=new ArcTiles(base,Object.assign({tileSize:256,maxZoom:19,maxNativeZoom:17,minZoom:8},opts));
+  l.on('tileunload',e=>{if(e.tile._blob)URL.revokeObjectURL(e.tile._blob)});
+  return l;
+}
+const dltLayer=arcLayer(DLT_URL+'/exportImage?bboxSR=3857&imageSR=3857&size=256,256&format=png&interpolation=RSP_NearestNeighbor&f=image',{pane:'dlt',opacity:.6,attribution:'Laub/Nadel © Copernicus (EEA) 2018'});
+function dist(a,b){const dLa=rad(b[0]-a[0]),dLo=rad(b[1]-a[1]);const h=Math.sin(dLa/2)**2+Math.cos(rad(a[0]))*Math.cos(rad(b[0]))*Math.sin(dLo/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+function bearing(a,b){const y=Math.sin(rad(b[1]-a[1]))*Math.cos(rad(b[0]));const x=Math.cos(rad(a[0]))*Math.sin(rad(b[0]))-Math.sin(rad(a[0]))*Math.cos(rad(b[0]))*Math.cos(rad(b[1]-a[1]));return (deg(Math.atan2(y,x))+360)%360}
+function fmtDist(m){return m<1000?Math.round(m/10)*10+' m':(m/1000).toFixed(m<10000?1:0).replace('.',',')+' km'}
+const DIRS=['N','NO','O','SO','S','SW','W','NW'];
+const dirName=b=>DIRS[Math.round(b/45)%8];
+function inRing(pt,ring){let ins=false;const x=pt[1],y=pt[0];for(let i=0,j=ring.length-1;i<ring.length;j=i++){const xi=ring[i][1],yi=ring[i][0],xj=ring[j][1],yj=ring[j][0];if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))ins=!ins}return ins}
+function inFeature(pt,f){
+  if(pt[0]<f.bb[0]||pt[0]>f.bb[2]||pt[1]<f.bb[1]||pt[1]>f.bb[3])return false;
+  let ins=false;for(const r of f.outer)if(inRing(pt,r)){ins=true;break}
+  if(!ins)return false;for(const r of f.inner)if(inRing(pt,r))return false;return true;
+}
+function ringAreaHa(r){let a=0;const k=Math.cos(rad(r[0][0]));for(let i=0,j=r.length-1;i<r.length;j=i++){a+=(r[j][1]*k*111320)*(r[i][0]*110540)-(r[i][1]*k*111320)*(r[j][0]*110540)}return Math.abs(a/2)/10000}
+/* Ringe aus Relations-Teilstücken zusammensetzen */
+function joinRings(ways){
+  const rings=[];const pool=ways.map(w=>w.slice());
+  while(pool.length){
+    let ring=pool.shift();let guard=0;
+    while(guard++<500){
+      const a=ring[0],b=ring[ring.length-1];
+      if(a[0]===b[0]&&a[1]===b[1])break;
+      let found=false;
+      for(let i=0;i<pool.length;i++){
+        const w=pool[i],w0=w[0],w1=w[w.length-1];
+        if(w0[0]===b[0]&&w0[1]===b[1]){ring=ring.concat(w.slice(1));pool.splice(i,1);found=true;break}
+        if(w1[0]===b[0]&&w1[1]===b[1]){ring=ring.concat(w.slice(0,-1).reverse());pool.splice(i,1);found=true;break}
+        if(w1[0]===a[0]&&w1[1]===a[1]){ring=w.slice(0,-1).concat(ring);pool.splice(i,1);found=true;break}
+        if(w0[0]===a[0]&&w0[1]===a[1]){ring=w.slice(1).reverse().concat(ring);pool.splice(i,1);found=true;break}
+      }
+      if(!found)break;
+    }
+    if(ring.length>3)rings.push(ring);
+  }
+  return rings;
+}
+const rd=v=>Math.round(v*1e5)/1e5;
+function osmToFeature(el){
+  let outer=[],inner=[];
+  if(el.type==='way'&&el.geometry){outer=[el.geometry.map(p=>[rd(p.lat),rd(p.lon)])]}
+  else if(el.type==='relation'&&el.members){
+    const o=[],i=[];
+    for(const m of el.members){if(m.type!=='way'||!m.geometry)continue;const g=m.geometry.map(p=>[rd(p.lat),rd(p.lon)]);(m.role==='inner'?i:o).push(g)}
+    outer=joinRings(o);inner=joinRings(i);
+  }
+  if(!outer.length)return null;
+  let bb=[90,180,-90,-180];
+  for(const r of outer)for(const p of r){if(p[0]<bb[0])bb[0]=p[0];if(p[1]<bb[1])bb[1]=p[1];if(p[0]>bb[2])bb[2]=p[0];if(p[1]>bb[3])bb[3]=p[1]}
+  const t=el.tags||{};
+  const keep={};['leaf_type','leaf_cycle','wood','genus','species','species:de','genus:de','name','protect_class','protection_title','leisure','boundary','landuse','natural'].forEach(k=>{if(t[k])keep[k]=t[k]});
+  return {id:el.type[0]+el.id,outer,inner,bb,tags:keep};
+}
+
+/* ---------- Eignung ---------- */
+const osmGenus=t=>/picea|fichte|pinus|kiefer|fagus|buche|quercus|eiche|betula|birke/.test([t.genus,t.species,t['species:de'],t['genus:de']].filter(Boolean).join(' ').toLowerCase());
+/* Eignung aus Baumarten-Anteilen der Fläche (gewichteter Mittelwert, kleiner Bonus für echte Mischung von Partnerbäumen) */
+function spInfo(sp){
+  let s=0,m=0;const sh=[];
+  for(const c in sp.c){const x=SP_CLASSES[c];if(!x)continue;const q=sp.c[c]/sp.T;s+=q*x.s;m+=q*x.m;sh.push([x,q])}
+  if(!sh.length)return null;
+  sh.sort((a,b)=>b[1]-a[1]);
+  if(sh.filter(([x,q])=>x.p&&q>=.15).length>=2){s+=.05;m+=.05}
+  const mixed=sh[0][1]<.6;
+  const parts=sh.filter(x=>x[1]>=.05).slice(0,3).map(([x,q])=>Math.round(q*100)+' % '+x.n).join(', ');
+  return {k:mixed?'misch':sh[0][0].k,s:Math.min(1,s),m:Math.min(1,m),label:(mixed?'Mischwald':sh[0][0].wald)+' ('+parts+')',known:true,sat:true,sp:true,parts,sh};
+}
+function treeInfo(t,sat,sp){
+  let lt=t.leaf_type||'';const w=t.wood||'';
+  if(!lt){if(w==='coniferous')lt='needleleaved';else if(w==='deciduous')lt='broadleaved';else if(w==='mixed')lt='mixed'}
+  const g=[t.genus,t.species,t['species:de'],t['genus:de']].filter(Boolean).join(' ').toLowerCase();
+  if(/picea|fichte/.test(g))return {s:.85,m:.9,k:'fichte',label:'Fichte',known:true};
+  if(/pinus|kiefer/.test(g))return {s:.6,m:.85,k:'kiefer',label:'Kiefer',known:true};
+  if(/fagus|buche/.test(g))return {s:.75,m:.5,k:'buche',label:'Buche',known:true};
+  if(/quercus|eiche/.test(g))return {s:.75,m:.35,k:'eiche',label:'Eiche',known:true};
+  if(/betula|birke/.test(g))return {s:.5,m:.3,k:'birke',label:'Birke',known:true};
+  if(sp&&sp.T>=5&&sp.T/sp.P>=.2){const r=spInfo(sp);if(r)return r}
+  if(lt==='mixed')return {s:.85,m:.8,k:'misch',label:'Mischwald',known:true};
+  if(lt==='needleleaved')return {s:.72,m:.85,k:'nadel',label:'Nadelwald',known:true};
+  if(lt==='broadleaved')return {s:.62,m:.4,k:'laub',label:'Laubwald',known:true};
+  if(sat&&sat.lt==='none')return {s:.2,m:.2,k:'none',label:'Keine Bäume 2018 (Satellit)',known:true,sat:true,none:true};
+  if(sat&&sat.lt){
+    const k=sat.lt==='mixed'?'mixed':sat.lt==='broadleaved'?2:3;
+    if(k==='mixed')return {s:.85,m:.8,k:'misch',label:'Mischwald (Satellit)',known:true,sat:true};
+    return {k:k===2?'laub':'nadel',s:SAT_SCORE[k].s,m:SAT_SCORE[k].m,label:SAT_SCORE[k].label+' (Satellit)',known:true,sat:true};
+  }
+  return {s:.45,m:.45,k:'unk',label:'Wald, Typ nicht erfasst',known:false};
+}
+const osmKnown=t=>treeInfo(t,null).known;
+function findsIn(f,art){let n=0;for(const x of S.finds){if(x.art===art&&inFeature([x.lat,x.lng],f))n++}return n}
+function personalBoost(f,art){return Math.min(.2,findsIn(f,art)*.1)}
+
+/* ---------- Begründung der Einstufung (i-Symbol im Popup) ---------- */
+const WHY={
+  s:{fichte:'Die Fichte ist der wichtigste Partnerbaum des Steinpilzes (Fichten-Steinpilz). Fichtenforste auf sauren Böden sind klassische Steinpilz-Plätze.',
+     kiefer:'Mit der Kiefer bildet der Kiefern-Steinpilz eine Partnerschaft, er ist aber seltener als an Fichte. Eher an lichten Rändern und auf Sand.',
+     buche:'Unter Buchen wachsen Steinpilz und Sommer-Steinpilz, besonders in älteren Beständen auf sauren, nicht zu nassen Böden.',
+     eiche:'Die Eiche ist Partner des Sommer-Steinpilzes und des Schwarzhütigen Steinpilzes. Gute Plätze sind lichte, warme Eichenbestände.',
+     birke:'Die Birke ist für Steinpilze nur selten Partner. Hier eher Birkenpilze und Rotkappen.',
+     misch:'Im Mischwald stehen mehrere Partnerbäume (Fichte, Buche, Eiche) zusammen. Das sind oft die ergiebigsten Steinpilz-Plätze.',
+     nadel:'Nadelwald ohne genaue Baumart: meist Fichte oder Kiefer, beide sind Partner des Steinpilzes.',
+     laub:'Laubwald ohne genaue Baumart: Buche und Eiche sind gute Partner, andere Laubbäume (Erle, Ahorn, Esche) nicht. Deshalb nur mittel.',
+     none:'Der Satellit sah hier 2018 kaum Bäume (Kahlschlag, Lichtung oder junge Aufforstung). Ohne alte Partnerbäume wachsen kaum Steinpilze.',
+     unk:'Für diese Fläche ist keine Baumart bekannt, weder in OpenStreetMap noch im Satellit. Deshalb ein vorsichtiger Mittelwert.',
+     douglasie:'Die Douglasie stammt aus Nordamerika. Steinpilze findet man darunter nur gelegentlich.',
+     tanne:'Unter Tannen wächst der Steinpilz, in Norddeutschland sind Tannen aber selten.',
+     laerche:'Die Lärche hat eigene Partnerpilze (Goldröhrling), Steinpilze eher selten.',
+     erle:'Erlen stehen auf nassen Böden und sind kein Partner des Steinpilzes.',
+     laubsonst:'Ahorn, Esche, Linde, Pappel oder Weide sind keine Partnerbäume des Steinpilzes.'},
+  m:{fichte:'Die Marone ist ein typischer Nadelwaldpilz. Fichte auf saurem, moosigem Boden ist ihr Lieblingsplatz.',
+     kiefer:'Kiefernwald auf Sand ist ideal für Maronen, oft in großen Mengen.',
+     buche:'Unter Buche kommt die Marone vor, aber deutlich seltener als im Nadelwald, am ehesten auf sauren Böden.',
+     eiche:'Unter Eichen wächst die Marone nur selten.',
+     birke:'Unter Birken wächst die Marone nur selten.',
+     misch:'Im Mischwald sind meist Nadelbäume beigemischt. Dort findet die Marone ihre Partner.',
+     nadel:'Nadelwald (Fichte oder Kiefer) ist der typische Lebensraum der Marone.',
+     laub:'Im reinen Laubwald ist die Marone selten.',
+     none:'Der Satellit sah hier 2018 kaum Bäume. Ohne Nadelbäume als Partner kaum Maronen.',
+     unk:'Für diese Fläche ist keine Baumart bekannt. Deshalb ein vorsichtiger Mittelwert.',
+     douglasie:'Unter Douglasien kommt die Marone vor, aber seltener als unter Fichte oder Kiefer.',
+     tanne:'Unter Tannen wächst die Marone gelegentlich.',
+     laerche:'Unter Lärchen findet man gelegentlich Maronen, häufiger den Goldröhrling.',
+     erle:'Erlen stehen auf nassen Böden, dort keine Maronen.',
+     laubsonst:'Unter Ahorn, Esche, Pappel oder Weide wächst keine Marone.'}
+};
+const ART_NAME={s:'Steinpilz',m:'Marone'};
+const SP_SHORT={
+  s:{fichte:'Hauptpartner',kiefer:'Partner, aber seltener',buche:'guter Partner',eiche:'guter Partner (Sommer-Steinpilz)',birke:'selten Partner',douglasie:'selten',tanne:'Partner',laerche:'selten',erle:'kein Partner',laubsonst:'kein Partner'},
+  m:{fichte:'Hauptpartner',kiefer:'Hauptpartner',buche:'gelegentlich',eiche:'selten',birke:'selten',douglasie:'gelegentlich',tanne:'gelegentlich',laerche:'gelegentlich',erle:'kein Partner',laubsonst:'kein Partner'}
+};
+let whyOpen='';// 's', 'm' oder '' – bleibt beim Nachladen des Popups erhalten
+function whySource(ti,tags,sat){
+  if(ti.sp)return 'Thünen-Baumartenkarte 2017/18 (Satellit, 10 m): '+ti.parts+'. Die Eignung ist der nach Anteil gewichtete Mittelwert der Baumarten.';
+  if(ti.sat&&sat)return ti.none?'Copernicus-Satellit 2018: kaum Bäume erkannt.':'Copernicus-Satellit 2018: Laub '+sat.l+' %, Nadel '+sat.n+' % (in OpenStreetMap kein Waldtyp eingetragen).';
+  if(ti.sat)return 'Copernicus-Satellit 2018, 10 m (in OpenStreetMap nicht als Wald erfasst).';
+  if(!ti.known)return 'OpenStreetMap: nur "Wald", ohne Baumart oder Laub/Nadel.';
+  const t=tags||{};const g=t.genus||t.species||t['species:de']||t['genus:de'];
+  if(g&&/^(fichte|kiefer|buche|eiche|birke)$/.test(ti.k))return 'OpenStreetMap: Baumart "'+g+'" eingetragen.';
+  if(t.leaf_type)return 'OpenStreetMap: leaf_type='+t.leaf_type+'.';
+  if(t.wood)return 'OpenStreetMap: wood='+t.wood+'.';
+  return 'OpenStreetMap.';
+}
+function whyHtml(art,ti,base,n,tags,sat){
+  const v=Math.min(1,base+Math.min(.2,n*.1));
+  const items=[
+    ti.sp?'<b>Baumarten:</b> '+ti.sh.filter(x=>x[1]>=.05).map(([x,q])=>Math.round(q*100)+' % '+x.n+' – '+SP_SHORT[art][x.k]+' (Wert '+Math.round(x[art]*100)+')').join('; ')+'.'+(ti.k!=='misch'?' '+WHY[art][ti.k]:''):
+    '<b>Baumart:</b> '+esc(ti.label)+'. '+WHY[art][ti.k||'unk'],
+    '<b>Quelle:</b> '+esc(whySource(ti,tags,sat)),
+    '<b>Grundwert:</b> '+Math.round(base*100)+' von 100'+(n?', dazu +'+Math.round(Math.min(.2,n*.1)*100)+' für '+n+' eigene'+(n===1?'n':'')+' '+ART_NAME[art]+'-Fund'+(n===1?'':'e')+' auf dieser Fläche':'')+
+      (n?' = <b>'+Math.round(v*100)+'</b>':'')+'. Ab 75 hoch, ab 55 mittel, darunter gering.'
+  ];
+  if(ti.sat&&!ti.none)items.push('Satellitendaten sind von 2017/18. Fichten können seitdem durch Dürre und Borkenkäfer abgestorben sein, deshalb "Bild 2023 prüfen".');
+  items.push('Nicht eingerechnet: Wetter (siehe Regen-Anzeige oben), Bodenart und Bestandsalter.');
+  return '<div class="why'+(whyOpen===art?' on':'')+'" data-whybox="'+art+'"><b>Warum '+ART_NAME[art]+' '+lvlTxt(v)+'?</b><ul><li>'+items.join('</li><li>')+'</li></ul></div>';
+}
+function ratingHtml(ti,tags,sat,f){
+  const ns=f?findsIn(f,'steinpilz'):0,nm=f?findsIn(f,'marone'):0;
+  const vs=Math.min(1,ti.s+Math.min(.2,ns*.1)),vm=Math.min(1,ti.m+Math.min(.2,nm*.1));
+  const ib=a=>'<button type="button" class="ibtn'+(whyOpen===a?' on':'')+'" data-why="'+a+'" aria-label="Begründung '+ART_NAME[a]+'">i</button>';
+  return '<br>Steinpilz: <b>'+lvlTxt(vs)+'</b>'+ib('s')+' · Marone: <b>'+lvlTxt(vm)+'</b>'+ib('m')+
+    whyHtml('s',ti,ti.s,ns,tags,sat)+whyHtml('m',ti,ti.m,nm,tags,sat);
+}
+function scoreOf(f){
+  const ti=treeInfo(f.tags,f.sat,f.sp);
+  const s=Math.min(1,ti.s+personalBoost(f,'steinpilz')),m=Math.min(1,ti.m+personalBoost(f,'marone'));
+  const v=S.mode==='s'?s:S.mode==='m'?m:(s+m)/2;
+  return {ti,s,m,v};
+}
+function colorFor(sc){
+  if(!sc.ti.known&&sc.v<.55)return getVar('--unk');
+  return sc.v>=.75?getVar('--good'):sc.v>=.55?getVar('--mid'):getVar('--low');
+}
+const cssCache={};
+function getVar(n){return cssCache[n]||(cssCache[n]=getComputedStyle(document.documentElement).getPropertyValue(n).trim())}
+const lvlTxt=v=>v>=.75?'hoch':v>=.55?'mittel':'gering';
+
+const ampelLayer=L.layerGroup().addTo(map);
+const nsgLayer=L.layerGroup().addTo(map);
+const ampelRenderer=L.canvas({pane:'ampel'});
+const nsgRenderer=L.svg({pane:'nsg'});
+let ampelOn=store.get('ampelOn',true),nsgOn=store.get('nsgOn',true);
+
+const satFillLayer=L.layerGroup().addTo(map);
+let satFillOn=store.get('satFillOn',true);
+const ampelPolyOpts=(col,op)=>({renderer:ampelRenderer,pane:'ampel',color:col,weight:1,opacity:Math.min(1,op+.25),fillColor:col,fillOpacity:op,bubblingMouseEvents:false});
+function fmtHa(ha){return ha>=1?Math.round(ha)+' ha':ha.toFixed(1).replace('.',',')+' ha'}
+function drawAmpel(){
+  ampelLayer.clearLayers();
+  $('legend').hidden=!ampelOn;
+  $('legSat').hidden=!satFillOn;
+  $('legendT').textContent='Eignung '+(S.mode==='s'?'Steinpilz':S.mode==='m'?'Marone':'Steinpilz + Marone');
+  drawSatFill();
+  if(!ampelOn)return;
+  const op=S.opac/100;
+  for(const f of S.forests.values()){
+    const sc=scoreOf(f);const col=colorFor(sc);
+    const poly=L.polygon(f.inner.length?[f.outer,f.inner].flat():f.outer,ampelPolyOpts(col,op));
+    poly.on('click',e=>forestPopup(f,e.latlng));
+    ampelLayer.addLayer(poly);
+  }
+}
+/* Route nach Google Maps (öffnet auf dem Handy die App) */
+function navBtns(lat,lng){
+  const d=(+lat).toFixed(6)+','+(+lng).toFixed(6);
+  const u=m=>'https://www.google.com/maps/dir/?api=1&destination='+d+'&travelmode='+m;
+  return '<div class="navrow"><span>Google Maps: Route oder Satellitenbild</span><a class="btn small" href="'+u('driving')+'" target="_blank" rel="noopener">➤ Auto</a><a class="btn small" href="'+u('walking')+'" target="_blank" rel="noopener">➤ zu Fuß</a><a class="btn small" href="https://www.google.com/maps/@?api=1&map_action=map&center='+d+'&zoom=18&basemap=satellite" target="_blank" rel="noopener">🛰 Satellit</a></div>';
+}
+/* Popup mit nachgeladenen Zeilen (Schutzstatus, Kahlschlag) */
+function livePopup(ll,head,parts,addFind,s2btn){
+  whyOpen='';
+  const st={};parts.forEach(x=>st[x.k]=x.wait);
+  const build=()=>(typeof head==='function'?head():head)+parts.map(x=>'<div class="pstat">'+st[x.k]+'</div>').join('')+
+    (addFind?'<button class="btn small" data-addfind="'+ll.lat+','+ll.lng+'" style="margin-top:6px">Fund hier eintragen</button>':'')+
+    (s2btn&&S.base!=='s2'?' <button class="btn small" data-s2="'+ll.lat+','+ll.lng+'" style="margin-top:6px">Bild 2023 prüfen</button>':'')+
+    navBtns(ll.lat,ll.lng);
+  const p=L.popup({maxWidth:290}).setLatLng(ll).setContent(build()).openOn(map);
+  parts.forEach(x=>x.run().catch(()=>x.fail).then(html=>{st[x.k]=html;if(p.isOpen())p.setContent(build())}));
+}
+function forestPopup(f,ll){
+  const t=f.tags;const ha=f.outer.reduce((a,r)=>a+ringAreaHa(r),0);
+  const sc=scoreOf(f);
+  let src='Quelle: OpenStreetMap';
+  if(sc.ti.sp)src='Baumarten: Thünen-Institut 2017/18 (Satellit, 10 m).';
+  else if(sc.ti.none)src='Copernicus 2018 sieht hier kaum Bäume (Laub '+f.sat.l+' %, Nadel '+f.sat.n+' %): Kahlschlag, Lichtung oder junge Aufforstung. Bild 2023 prüfen.';
+  else if(sc.ti.sat)src='Waldtyp: Copernicus 2018 (Laub '+f.sat.l+' %, Nadel '+f.sat.n+' %). Fichten seit 2018 evtl. abgestorben, Satellitenbild prüfen.';
+  livePopup(ll,()=>
+    '<b>'+esc(sc.ti.label)+'</b>'+(t.name?'<br>'+esc(t.name):'')+
+    ratingHtml(sc.ti,t,f.sat,f)+
+    '<span style="color:var(--muted)">'+fmtHa(ha)+
+    (t.leaf_type?' · leaf_type='+esc(t.leaf_type):'')+(t.genus?' · '+esc(t.genus):'')+'<br>'+esc(src)+'</span>',
+    [{k:'s',wait:'Schutzstatus wird geprüft …',fail:'Schutzstatus: nicht abrufbar',run:()=>protStatus(ll.lat,ll.lng)},
+     {k:'k',wait:'Kahlschlag-Check läuft …',fail:'Kahlschlag-Check: nicht abrufbar',run:()=>treeLoss(f)}],true,true);
+}
+
+/* ---------- ArcGIS-Abfragen ---------- */
+async function fetchJson(url,opt,ms){
+  const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),ms||12000);
+  try{const r=await fetch(url,Object.assign({signal:ctl.signal},opt||{}));if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();if(j&&j.error)throw new Error(j.error.message||'Fehler');return j}
+  finally{clearTimeout(tm)}
+}
+function arcPointQuery(id,lat,lng){
+  return fetchJson(NLWKN_URL+'/'+id+'/query?geometry='+lng.toFixed(6)+','+lat.toFixed(6)+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=json');
+}
+function attrName(a){if(!a)return '';for(const k in a)if(/^name$/i.test(k)&&a[k])return String(a[k]);for(const k in a)if(/name/i.test(k)&&typeof a[k]==='string'&&a[k])return a[k];return ''}
+const PROT=[[270,'NSG – Sammeln verboten','w'],[272,'LSG – meist erlaubt, Verordnung beachten','m'],[14,'FFH-Gebiet','m']];
+async function protStatus(lat,lng){
+  if(!navigator.onLine){
+    const hit=[...S.nsg.values()].find(f=>inFeature([lat,lng],f));
+    return hit?'<span class="w">NSG – Sammeln verboten</span>'+(hit.tags.name?' ('+esc(hit.tags.name)+')':'')+'<br><span style="color:var(--muted)">offline, laut OpenStreetMap</span>':'Schutzstatus: offline nicht prüfbar (kein NSG laut OpenStreetMap)';
+  }
+  const res=await Promise.all(PROT.map(([id,txt,cl])=>arcPointQuery(id,lat,lng).then(j=>j.features&&j.features.length?'<span class="'+cl+'">'+txt+'</span>'+(attrName(j.features[0].attributes)?' ('+esc(attrName(j.features[0].attributes))+')':''):null,()=>undefined)));
+  if(res.every(r=>r===undefined))throw new Error('offline');
+  const hits=res.filter(Boolean);
+  return hits.length?hits.join('<br>'):'Kein NSG, LSG oder FFH-Gebiet (NLWKN)'+(res.includes(undefined)?', teilweise nicht abrufbar':'');
+}
+/* Kahlschlag-Check: Histogramm der Baumverlust-Maske 2015–2018 über der Fläche */
+function ringSigned(r){let a=0;for(let i=0,j=r.length-1;i<r.length;j=i++)a+=(r[j][1]*r[i][0])-(r[i][1]*r[j][0]);return a/2}
+function arcRing(r,cw){
+  const step=Math.max(1,Math.ceil(r.length/300));const out=[];
+  for(let i=0;i<r.length;i+=step)out.push([r[i][1],r[i][0]]);
+  const f=out[0],l=out[out.length-1];if(f[0]!==l[0]||f[1]!==l[1])out.push(f.slice());
+  const a=ringSigned(out.map(p=>[p[1],p[0]]));// >0 = gegen den Uhrzeigersinn
+  if((cw&&a>0)||(!cw&&a<0))out.reverse();
+  return out;
+}
+async function treeLoss(f){
+  if(f.tcc)return f.tcc;
+  if(!navigator.onLine)return 'Kahlschlag-Check: nur online';
+  const rings=f.outer.map(r=>arcRing(r,true)).concat(f.inner.map(r=>arcRing(r,false)));
+  const body='geometry='+encodeURIComponent(JSON.stringify({rings,spatialReference:{wkid:4326}}))+'&geometryType=esriGeometryPolygon&f=json';
+  const j=await fetchJson(TCC_URL+'/computeHistograms',{method:'POST',body,headers:{'Content-Type':'application/x-www-form-urlencoded'}},20000);
+  const h=j.histograms&&j.histograms[0];if(!h)throw new Error('leer');
+  const bw=(h.max-h.min)/h.size;const cnt=v=>{const i=Math.floor((v-h.min)/bw);return h.counts[i]||0};
+  const loss=cnt(2),keep=cnt(10),gain=cnt(1);
+  let out;
+  if(loss+keep<5)out='Kahlschlag-Check: keine Daten für diese Fläche';
+  else{
+    const pct=loss/(loss+keep)*100;
+    const p=pct<1&&loss>0?'unter 1':Math.round(pct);
+    out=(pct>=10?'<span class="w">Baumverlust 2015–2018: '+p+' % der Waldfläche</span>':'Baumverlust 2015–2018: '+p+' % der Waldfläche')+
+      (gain>0?' · Neuwuchs '+Math.max(1,Math.round(gain/(loss+keep)*100))+' %':'')+
+      '<br><span style="color:var(--muted)">Copernicus. Verluste ab 2019 nicht enthalten, dafür „Bild 2023 prüfen“.</span>';
+  }
+  f.tcc=out;return out;
+}
+
+/* ---------- Satellit: Laub/Nadel je Lade-Ausschnitt ---------- */
+S.rasters=new Map();// key -> {W,H,minx,miny,maxx,maxy,cls,mask,img}
+const satBusy=new Set();
+function boxRasterDef(b){
+  const [x0,y0]=toM(b[0],b[1]),[x1,y1]=toM(b[2],b[3]);
+  const k=Math.cos(rad((b[0]+b[2])/2));// Boden-m -> Mercator-m
+  const pxM=SAT_M_PER_PX/k;
+  let W=Math.round((x1-x0)/pxM),H=Math.round((y1-y0)/pxM);
+  const sc=Math.max(1,Math.max(W,H)/2000);W=Math.max(16,Math.round(W/sc));H=Math.max(16,Math.round(H/sc));
+  return {W,H,minx:x0,miny:y0,maxx:x1,maxy:y1};
+}
+function rasterUrl(d){return DLT_URL+'/exportImage?bbox='+[d.minx,d.miny,d.maxx,d.maxy].map(v=>v.toFixed(1)).join(',')+'&bboxSR=3857&imageSR=3857&size='+d.W+','+d.H+'&format=png&interpolation=RSP_NearestNeighbor&f=image'}
+async function cachedImageBlob(url){
+  let c=null;
+  try{if('caches' in window){c=await caches.open(TILE_CACHE);const m=await c.match(url);if(m&&m.type!=='opaque')return await m.blob()}}catch(e){}
+  if(!navigator.onLine)return null;
+  const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),60000);
+  try{
+    const r=await fetch(url,{mode:'cors',signal:ctl.signal});
+    if(!r.ok||!/image/.test(r.headers.get('content-type')||''))throw new Error('kein Bild');
+    if(c)try{await c.put(url,r.clone())}catch(e){}
+    return await r.blob();
+  }finally{clearTimeout(tm)}
+}
+async function blobToCanvas(blob,W,H){
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;
+  const cx=cv.getContext('2d',{willReadFrequently:true});cx.imageSmoothingEnabled=false;
+  if(window.createImageBitmap){const bm=await createImageBitmap(blob);cx.drawImage(bm,0,0,W,H);bm.close&&bm.close()}
+  else{const u=URL.createObjectURL(blob);try{const im=await new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=no;i.src=u});cx.drawImage(im,0,0,W,H)}finally{URL.revokeObjectURL(u)}}
+  return cx.getImageData(0,0,W,H).data;
+}
+function classify(px,W,H){
+  const cls=new Uint8Array(W*H);
+  for(let i=0,n=W*H;i<n;i++){
+    const o=i*4;if(px[o+3]<128)continue;
+    const r=px[o],g=px[o+1],b=px[o+2];let best=0,bd=1e9;
+    for(const c of DLT_COLORS){const d=(r-c[0])**2+(g-c[1])**2+(b-c[2])**2;if(d<bd){bd=d;best=c[3]}}
+    if(bd<4800)cls[i]=best;
+  }
+  return cls;
+}
+/* Polygon zeilenweise rastern (even-odd über Außen- und Innenringe) */
+function scanFeature(f,D,cb){
+  const pw=(D.maxx-D.minx)/D.W,ph=(D.maxy-D.miny)/D.H;
+  const rings=f.outer.concat(f.inner).map(r=>r.map(p=>{const m=toM(p[0],p[1]);return [(m[0]-D.minx)/pw,(D.maxy-m[1])/ph]}));
+  let ya=Infinity,yb=-Infinity;for(const r of rings)for(const p of r){if(p[1]<ya)ya=p[1];if(p[1]>yb)yb=p[1]}
+  const j0=Math.max(0,Math.floor(ya)),j1=Math.min(D.H-1,Math.ceil(yb));
+  const xs=[];
+  for(let j=j0;j<=j1;j++){
+    const yc=j+.5;xs.length=0;
+    for(const r of rings)for(let i=0,k=r.length-1;i<r.length;k=i++){
+      const a=r[k],b=r[i];if((a[1]>yc)!==(b[1]>yc))xs.push(a[0]+(yc-a[1])*(b[0]-a[0])/(b[1]-a[1]));
+    }
+    xs.sort((a,b)=>a-b);
+    for(let q=0;q+1<xs.length;q+=2){
+      const i0=Math.max(0,Math.ceil(xs[q]-.5)),i1=Math.min(D.W-1,Math.floor(xs[q+1]-.5));
+      if(i1>=i0)cb(j*D.W,i0,i1);
+    }
+  }
+}
+function bbHits(f,b){return !(f.bb[2]<b[0]||f.bb[0]>b[2]||f.bb[3]<b[1]||f.bb[1]>b[3])}
+async function ensureRaster(l){
+  if(S.rasters.has(l.k)||satBusy.has(l.k))return S.rasters.get(l.k);
+  satBusy.add(l.k);
+  try{
+    const D=boxRasterDef(l.b);
+    const blob=await cachedImageBlob(rasterUrl(D));if(!blob)return null;
+    D.cls=classify(await blobToCanvas(blob,D.W,D.H),D.W,D.H);
+    D.b=l.b;D.k=l.k;
+    // Flächen ohne OSM-Waldtyp auszählen, OSM-Wald als Maske für die Rasterfärbung
+    D.mask=new Uint8Array(D.W*D.H);let changed=0;
+    for(const f of S.forests.values()){
+      if(!bbHits(f,l.b))continue;
+      const need=(f.sat===undefined||(f.sat.lt===''&&f.sat.p===undefined))&&!osmKnown(f.tags);
+      let Lc=0,Nc=0,P=0;
+      scanFeature(f,D,(row,i0,i1)=>{for(let i=row+i0,e=row+i1;i<=e;i++){D.mask[i]=1;if(need){const c=D.cls[i];if(c)P++;if(c===2)Lc++;else if(c===3)Nc++}}});
+      if(need){
+        const T=Lc+Nc;
+        if(P>=10&&T/P<.2){f.sat={lt:'none',l:Math.round(Lc/P*100),n:Math.round(Nc/P*100),p:P}}// Satellit sieht 2018 kaum Bäume
+        else if(T<5){f.sat={lt:'',l:0,n:0,p:P}}
+        else{const lf=Lc/T,nf=Nc/T;f.sat={lt:lf>=.25&&nf>=.25?'mixed':lf>nf?'broadleaved':'needleleaved',l:Math.round(lf*100),n:Math.round(nf*100)}}
+        changed++;
+      }
+    }
+    D.keep=keepPatches(D);
+    try{if(await speciesRaster(D))changed++}catch(e){}
+    S.rasters.set(l.k,D);
+    if(changed)persistSat();
+    return D;
+  }catch(e){return null}
+  finally{satBusy.delete(l.k)}
+}
+/* Baumarten-Anteile je Fläche aus der Thünen-Karte (gleiches Raster wie Laub/Nadel) */
+async function speciesRaster(D){
+  const url=THUENEN_BASE+'&WIDTH='+D.W+'&HEIGHT='+D.H+'&BBOX='+[D.minx,D.miny,D.maxx,D.maxy].map(v=>v.toFixed(1)).join(',');
+  const blob=await cachedImageBlob(url);if(!blob)return 0;
+  const px=await blobToCanvas(blob,D.W,D.H);
+  const N=D.W*D.H,sp=new Uint8Array(N),cls=Object.entries(SP_CLASSES);
+  for(let i=0;i<N;i++){
+    const o=i*4;if(px[o+3]<100)continue;
+    let best=0,bd=1e9;for(const [c,x] of cls){const d=Math.abs(px[o]-x.col[0])+Math.abs(px[o+1]-x.col[1])+Math.abs(px[o+2]-x.col[2]);if(d<bd){bd=d;best=+c}}
+    if(bd<60)sp[i]=best;
+  }
+  let ch=0;
+  for(const f of S.forests.values()){
+    if(!bbHits(f,D.b)||(f.sp&&f.sp.v===1)||osmGenus(f.tags))continue;
+    const c={};let P=0,T=0;
+    scanFeature(f,D,(row,i0,i1)=>{for(let i=row+i0,e=row+i1;i<=e;i++){P++;const k=sp[i];if(k){T++;c[k]=(c[k]||0)+1}}});
+    if(P<5)continue;
+    f.sp={v:1,P,T,c};ch++;
+  }
+  return ch;
+}
+/* Satelliten-Einordnung mit den Gebietsdaten speichern */
+function persistSat(){
+  for(const l of S.loaded){
+    const d=store.get('area_'+l.k,null);if(!d)continue;let ch=false;
+    for(const f of d.f){const g=S.forests.get(f.id);if(!g)continue;if(g.sat&&JSON.stringify(g.sat)!==JSON.stringify(f.sat)){f.sat=g.sat;ch=true}if(g.sp&&!f.sp){f.sp=g.sp;ch=true}}
+    if(ch)store.set('area_'+l.k,d);
+  }
+}
+let satRun=null;
+async function updateSat(){
+  if(satRun)return satRun;
+  satRun=(async()=>{
+    const vb=map.getBounds();const view=[vb.getSouth(),vb.getWest(),vb.getNorth(),vb.getEast()];
+    for(const l of S.loaded.slice()){if(bbHits({bb:l.b},view))await ensureRaster(l)}
+    updateDataChip();drawAmpel();
+  })().finally(()=>{satRun=null});
+  return satRun;
+}
+/* Zusammenhängende Baum-Pixel außerhalb OSM (4er-Nachbarschaft) unter SAT_MIN_HA verwerfen */
+function keepPatches(D){
+  const W=D.W,H=D.H,N=W*H,keep=new Uint8Array(N),seen=new Uint8Array(N);
+  const tree=i=>(D.cls[i]===2||D.cls[i]===3)&&!D.mask[i];
+  const gm=(D.maxx-D.minx)/W*Math.cos(rad((D.b[0]+D.b[2])/2));// Boden-Meter je Pixel
+  const pxHa=gm*gm/10000;
+  const minPx=Math.max(1,Math.ceil(SAT_MIN_HA/pxHa));
+  const stack=new Int32Array(N),comp=[];
+  for(let s=0;s<N;s++){
+    if(seen[s]||!tree(s))continue;
+    let sp=0;stack[sp++]=s;seen[s]=1;comp.length=0;
+    while(sp){
+      const i=stack[--sp];comp.push(i);const x=i%W;
+      if(x>0&&!seen[i-1]&&tree(i-1)){seen[i-1]=1;stack[sp++]=i-1}
+      if(x<W-1&&!seen[i+1]&&tree(i+1)){seen[i+1]=1;stack[sp++]=i+1}
+      if(i>=W&&!seen[i-W]&&tree(i-W)){seen[i-W]=1;stack[sp++]=i-W}
+      if(i<N-W&&!seen[i+W]&&tree(i+W)){seen[i+W]=1;stack[sp++]=i+W}
+    }
+    if(comp.length>=minPx)for(const i of comp)keep[i]=1;
+  }
+  return keep;
+}
+function hexRgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');const n=parseInt(h,16);return [n>>16&255,n>>8&255,n&255]}
+function renderSat(D){
+  const key=S.mode+'|'+getVar('--good')+getVar('--mid')+getVar('--low');
+  if(D.img&&D.img.key===key)return D.img;
+  const cols={};
+  for(const c of [2,3]){const sc=SAT_SCORE[c];const v=S.mode==='s'?sc.s:S.mode==='m'?sc.m:(sc.s+sc.m)/2;cols[c]=hexRgb(colorFor({ti:{known:true},v}))}
+  const cv=document.createElement('canvas');cv.width=D.W;cv.height=D.H;const cx=cv.getContext('2d');
+  const im=cx.createImageData(D.W,D.H);const a=im.data;let n=0;
+  for(let i=0,N=D.W*D.H;i<N;i++){const c=D.cls[i];if(D.keep[i]){const o=i*4,rgb=cols[c];a[o]=rgb[0];a[o+1]=rgb[1];a[o+2]=rgb[2];a[o+3]=255;n++}}
+  cx.putImageData(im,0,0);
+  D.img={key,url:n?cv.toDataURL('image/png'):null};
+  return D.img;
+}
+function drawSatFill(){
+  satFillLayer.clearLayers();
+  if(!ampelOn||!satFillOn)return;
+  const op=S.opac/100;
+  for(const D of S.rasters.values()){
+    const img=renderSat(D);if(!img.url)continue;
+    const sw=fromM(D.minx,D.miny),ne=fromM(D.maxx,D.maxy);
+    satFillLayer.addLayer(L.imageOverlay(img.url,[sw,ne],{pane:'ampel',opacity:op,className:'satImg',interactive:false}));
+  }
+}
+/* Antippen von Satelliten-Wald außerhalb von OSM-Flächen */
+function satAt(ll){
+  const [x,y]=toM(ll.lat,ll.lng);
+  for(const D of S.rasters.values()){
+    if(x<D.minx||x>D.maxx||y<D.miny||y>D.maxy)continue;
+    const i=Math.floor((x-D.minx)/(D.maxx-D.minx)*D.W),j=Math.floor((D.maxy-y)/(D.maxy-D.miny)*D.H);
+    const k=j*D.W+i;return {c:D.cls[k],m:D.mask[k]||!D.keep[k]};
+  }
+  return null;
+}
+map.on('click',e=>{
+  if(!ampelOn||!satFillOn)return;
+  const h=satAt(e.latlng);if(!h||h.m||(h.c!==2&&h.c!==3))return;
+  const sc=SAT_SCORE[h.c];
+  livePopup(e.latlng,()=>
+    '<b>'+sc.label+' (nur Satellit)</b>'+(ratingHtml({k:sc.k,s:sc.s,m:sc.m,label:sc.label+' (nur Satellit)',known:true,sat:true},null,null,null))+
+    '<span style="color:var(--muted)">In OpenStreetMap nicht als Wald erfasst. Copernicus 2018, 10 m. Satellitenbild prüfen.</span>',
+    [{k:'s',wait:'Schutzstatus wird geprüft …',fail:'Schutzstatus: nicht abrufbar',run:()=>protStatus(e.latlng.lat,e.latlng.lng)}],true,true);
+});
+/* Antippen einer freien Stelle (kein Wald-, NSG- oder Satelliten-Popup): Route dorthin */
+let popN=0,popClosedAt=0;
+map.on('preclick',()=>{popN=0});
+map.on('popupopen',()=>{popN++;document.body.classList.add('popopen')});
+map.on('popupclose',()=>{setTimeout(()=>{if(!(map._popup&&map._popup.isOpen()))document.body.classList.remove('popopen')},0)});
+map.on('popupclose',()=>{popClosedAt=Date.now()});
+map.on('click',e=>{
+  const ll=e.latlng,t=Date.now();
+  setTimeout(()=>{
+    if(popN||t-popClosedAt<400)return;// anderes Popup offen oder gerade geschlossen
+    L.popup({maxWidth:260}).setLatLng(ll).setContent('<b>Diese Stelle</b><br><span style="color:var(--muted)">'+ll.lat.toFixed(5)+', '+ll.lng.toFixed(5)+'</span>'+navBtns(ll.lat,ll.lng)).openOn(map);
+  },0);
+});
+function updateDataChip(){
+  if(!S.forests.size)return;
+  let sat=0,unk=0,none=0,spn=0;for(const f of S.forests.values()){const ti=treeInfo(f.tags,f.sat,f.sp);if(ti.none)none++;else if(ti.sp)spn++;else if(ti.sat)sat++;else if(!ti.known)unk++}
+  setData('Wald-Daten: '+S.forests.size+' Flächen'+(spn?' · '+spn+' mit Baumarten':'')+(sat?' · '+sat+' per Satellit':'')+(none?' · '+none+' ohne Bäume':'')+(unk?' · '+unk+' unbekannt':''));
+}
+function drawNsg(){
+  nsgLayer.clearLayers();
+  if(!nsgOn)return;
+  const red=getVar('--bad');
+  for(const f of S.nsg.values()){
+    const p=L.polygon(f.inner.length?[f.outer,f.inner].flat():f.outer,{renderer:nsgRenderer,pane:'nsg',color:red,weight:2,fillColor:red,fillOpacity:.18,dashArray:'6 4',bubblingMouseEvents:false});
+    p.on('click',e=>{L.popup().setLatLng(e.latlng).setContent('<b>Naturschutzgebiet</b>'+(f.tags.name?'<br>'+esc(f.tags.name):'')+'<br>Sammeln verboten, Wege nicht verlassen.<br><span style="color:var(--muted)">Quelle: OpenStreetMap</span>'+navBtns(e.latlng.lat,e.latlng.lng)).openOn(map)});
+    nsgLayer.addLayer(p);
+  }
+}
+/* Buttons in Popups (delegiert, überlebt nachgeladene Inhalte) */
+$('map').addEventListener('click',ev=>{
+  const wb=ev.target.closest&&ev.target.closest('[data-why]');
+  if(wb){ev.stopPropagation();ev.preventDefault();
+    const a=wb.dataset.why;whyOpen=whyOpen===a?'':a;
+    const pc=wb.closest('.leaflet-popup-content');
+    pc.querySelectorAll('[data-why]').forEach(b=>b.classList.toggle('on',b.dataset.why===whyOpen));
+    pc.querySelectorAll('[data-whybox]').forEach(b=>b.classList.toggle('on',b.dataset.whybox===whyOpen));
+    const p=map._popup;if(p&&p.isOpen()&&p._updateLayout){p._updateLayout();p._updatePosition();p._adjustPan()}// aufgeklappte Begründung ins Bild schieben
+    return}
+  const b=ev.target.closest&&ev.target.closest('[data-addfind]');
+  if(b){ev.stopPropagation();const [la,ln]=b.dataset.addfind.split(',').map(Number);map.closePopup();openFind({lat:la,lng:ln,src:'Position: angetippte Waldfläche'});return}
+  const s2=ev.target.closest&&ev.target.closest('[data-s2]');
+  if(s2){ev.stopPropagation();const [la,ln]=s2.dataset.s2.split(',').map(Number);map.closePopup();setBase('s2');map.setView([la,ln],Math.max(map.getZoom(),15));toast('Sentinel-2 2023: braune Flecken im Wald = abgestorben oder gefällt');return}
+  const d=ev.target.closest&&ev.target.closest('[data-delfind]');
+  if(d){ev.stopPropagation();
+    if(d.dataset.armed){deleteFind(d.dataset.delfind);map.closePopup()}
+    else{d.dataset.armed='1';d.textContent='Wirklich löschen?';d.classList.add('danger')}
+  }
+},true);
+
+/* ---------- OSM-Daten laden (Overpass) ---------- */
+function boxKey(b){return b.map(v=>v.toFixed(3)).join(',')}
+function covered(b){return S.loaded.some(l=>b[0]>=l.b[0]&&b[1]>=l.b[1]&&b[2]<=l.b[2]&&b[3]<=l.b[3])}
+function loadCachedAreas(){
+  for(const l of S.loaded){
+    const d=store.get('area_'+l.k,null);if(!d)continue;
+    for(const f of d.f)S.forests.set(f.id,f);
+    for(const f of d.n)S.nsg.set(f.id,f);
+  }
+}
+async function overpass(q){
+  // mehrere öffentliche Server, drei Runden; der zuletzt erfolgreiche wird zuerst gefragt
+  const first=store.get('ovOk',null);
+  const list=first&&OVERPASS.includes(first)?[first,...OVERPASS.filter(u=>u!==first)]:OVERPASS.slice();
+  let lastErr;
+  for(let round=0;round<3;round++){
+    for(const u of list){
+      const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),round?70000:40000);
+      try{
+        const r=await fetch(u,{method:'POST',body:'data='+encodeURIComponent(q),headers:{'Content-Type':'application/x-www-form-urlencoded'},signal:ctl.signal});
+        if(!r.ok)throw new Error('HTTP '+r.status);
+        const j=await r.json();
+        if(j.remark&&/runtime error|timeout/i.test(j.remark)&&!(j.elements||[]).length)throw new Error(j.remark);
+        store.set('ovOk',u);
+        return j;
+      }catch(e){lastErr=e}
+      finally{clearTimeout(tm)}
+    }
+    if(!navigator.onLine||round===2)break;
+    setData('Wald-Daten: Server ausgelastet, Versuch '+(round+2)+' von 3 …');
+    await new Promise(ok=>setTimeout(ok,3000*(round+1)));
+  }
+  throw lastErr||new Error('Overpass nicht erreichbar');
+}
+let loading=false;
+async function loadOsm(force){
+  const z=map.getZoom();
+  if(z<12&&!force){setData('Wald-Daten: näher heranzoomen');return}
+  const vb=map.getBounds();
+  const view=[vb.getSouth(),vb.getWest(),vb.getNorth(),vb.getEast()];
+  if(covered(view)){if(S.forests.size)updateDataChip();else setData('Wald-Daten: gespeichert');if(ampelOn)updateSat();return}
+  if(loading)return;
+  if(!navigator.onLine){setData('Wald-Daten: offline');return}
+  // gepolsterter Ausschnitt, gedeckelt
+  const cLat=(view[0]+view[2])/2,cLng=(view[1]+view[3])/2;
+  const hLat=Math.min(.12,(view[2]-view[0])*.8),hLng=Math.min(.2,(view[3]-view[1])*.8);
+  const b=[cLat-hLat,cLng-hLng,cLat+hLat,cLng+hLng].map(v=>Math.round(v*1000)/1000);
+  const bb=b.join(',');
+  const q='[out:json][timeout:60];('+
+    'way["landuse"="forest"]('+bb+');way["natural"="wood"]('+bb+');'+
+    'relation["landuse"="forest"]['+'"type"="multipolygon"]('+bb+');relation["natural"="wood"]["type"="multipolygon"]('+bb+');'+
+    'way["leisure"="nature_reserve"]('+bb+');relation["leisure"="nature_reserve"]('+bb+');'+
+    'way["boundary"="protected_area"]["protect_class"="4"]('+bb+');relation["boundary"="protected_area"]["protect_class"="4"]('+bb+');'+
+    ');out tags geom;';
+  loading=true;setData('Wald-Daten: lädt …');
+  try{
+    const j=await overpass(q);
+    const fs=[],ns=[];
+    for(const el of j.elements||[]){
+      const t=el.tags||{};
+      const isNsg=(t.leisure==='nature_reserve'||(t.boundary==='protected_area'&&t.protect_class==='4'))&&!/landschaftsschutz/i.test(t.protection_title||'');
+      const isForest=t.landuse==='forest'||t.natural==='wood';
+      if(!isNsg&&!isForest)continue;
+      const f=osmToFeature(el);if(!f)continue;
+      if(isNsg){S.nsg.set(f.id,f);ns.push(f)}
+      if(isForest){S.forests.set(f.id,f);fs.push(f)}
+    }
+    const k=boxKey(b);
+    S.loaded.push({b,k,t:Date.now()});
+    // speichern, bei vollem Speicher älteste Gebiete verwerfen
+    let ok=store.set('area_'+k,{f:fs,n:ns});
+    while(!ok&&S.loaded.length>1){const old=S.loaded.shift();store.del('area_'+old.k);ok=store.set('area_'+k,{f:fs,n:ns})}
+    store.set('loadedBoxes',S.loaded);
+    setData('Wald-Daten: '+fs.length+' Flächen'+(ok?'':' (nicht gespeichert)'));
+    for(const D of [...S.rasters.values()])if(bbHits({bb:D.b},b))S.rasters.delete(D.k);// Maske mit neuen Flächen neu bilden
+    drawAmpel();drawNsg();checkNsg();
+    if(ok)updateSat();
+  }catch(e){setData('Wald-Daten: Laden fehlgeschlagen');}
+  finally{loading=false}
+}
+function setData(t){$('dataChip').textContent=t}
+let moveT;
+map.on('moveend',()=>{
+  store.set('view',{c:[map.getCenter().lat,map.getCenter().lng],z:map.getZoom()});
+  clearTimeout(moveT);moveT=setTimeout(()=>{if(ampelOn||nsgOn)loadOsm()},1200);
+});
+
+/* ---------- Amtliche Schutzgebiete (NLWKN, ArcGIS REST) ---------- */
+const nlwknLayers={};
+const nlwknOn=store.get('nlwknOn',null)||Object.fromEntries(NLWKN_LAYERS.map(d=>[d.id,d.on]));
+function buildNlwknList(){
+  const box=$('nlwknList');box.innerHTML='';
+  NLWKN_LAYERS.forEach(d=>{
+    if(!nlwknLayers[d.id])nlwknLayers[d.id]=arcLayer(NLWKN_URL+'/export?bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:'+d.id+'&f=image',{pane:'wms',opacity:.6,attribution:'Schutzgebiete © NLWKN'});
+    const lab=document.createElement('label');lab.className='opt';
+    lab.innerHTML='<input type="checkbox"><span>'+esc(d.title)+'<small>amtlich, NLWKN · '+esc(d.sub)+'</small></span>';
+    const cb=lab.querySelector('input');cb.checked=!!nlwknOn[d.id];
+    if(cb.checked)nlwknLayers[d.id].addTo(map);
+    cb.addEventListener('change',()=>{nlwknOn[d.id]=cb.checked;store.set('nlwknOn',nlwknOn);cb.checked?nlwknLayers[d.id].addTo(map):map.removeLayer(nlwknLayers[d.id])});
+    box.appendChild(lab);
+  });
+}
+buildNlwknList();
+
+/* ---------- Fundstellen ---------- */
+const findLayer=L.layerGroup().addTo(map);
+function artOf(id){return ARTS.find(a=>a.id===id)||ARTS[ARTS.length-1]}
+function fmtDate(t){const d=new Date(t);return d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'})}
+function drawFinds(){
+  findLayer.clearLayers();
+  if(!$('oFinds').checked)return;
+  for(const f of S.finds){
+    const a=artOf(f.art);
+    const icon=L.divIcon({className:'',html:'<div class="badge" style="background:'+a.col+'">'+a.l+'</div>',iconSize:[28,28],iconAnchor:[14,14]});
+    L.marker([f.lat,f.lng],{icon,pane:'finds'}).bindPopup(
+      '<b>'+esc(a.name)+'</b> · '+esc(f.qty||'')+'<br>'+fmtDate(f.t)+(f.note?'<br>'+esc(f.note):'')+
+      '<br><button class="btn small" data-delfind="'+esc(f.id)+'" style="margin-top:6px">Löschen</button>'+navBtns(f.lat,f.lng)
+    ).addTo(findLayer);
+  }
+  $('findCount').textContent='('+S.finds.length+')';
+  const list=$('findList');list.innerHTML='';
+  if(!S.finds.length){list.innerHTML='<p class="hint">Noch keine Funde. Tippe „Fund +“ oder drücke lange auf die Karte.</p>';return}
+  S.finds.slice().sort((a,b)=>b.t-a.t).forEach(f=>{
+    const a=artOf(f.art);const el=document.createElement('div');el.className='find';
+    el.innerHTML='<div class="badge" style="background:'+a.col+'">'+a.l+'</div><div class="n"><b>'+esc(a.name)+'</b> · '+esc(f.qty||'')+'<small>'+fmtDate(f.t)+(f.note?' · '+esc(f.note):'')+'</small></div><button class="btn small" type="button">Zeigen</button>';
+    el.querySelector('button').addEventListener('click',()=>{closeSheets();map.setView([f.lat,f.lng],16)});
+    list.appendChild(el);
+  });
+}
+function saveFinds(){store.set('finds',S.finds);drawFinds();drawAmpel()}
+function deleteFind(id){S.finds=S.finds.filter(f=>f.id!==id);saveFinds()}
+let pending=null,selArt='steinpilz',selQty='2–5';
+function buildChips(){
+  const ac=$('artChips');ac.innerHTML='';
+  ARTS.forEach(a=>{const b=document.createElement('button');b.type='button';b.textContent=a.name;b.classList.toggle('on',a.id===selArt);b.onclick=()=>{selArt=a.id;buildChips()};ac.appendChild(b)});
+  const qc=$('qtyChips');qc.innerHTML='';
+  QTYS.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.classList.toggle('on',q===selQty);b.onclick=()=>{selQty=q;buildChips()};qc.appendChild(b)});
+}
+function openFind(p){pending=p;$('findSrc').textContent=p.src+' ('+p.lat.toFixed(5)+', '+p.lng.toFixed(5)+')';$('findNote').value='';buildChips();openSheet('sFind')}
+$('findSave').onclick=()=>{
+  if(!pending)return;
+  S.finds.push({id:'f'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),lat:rd(pending.lat),lng:rd(pending.lng),art:selArt,qty:selQty,note:$('findNote').value.trim(),t:Date.now()});
+  pending=null;saveFinds();closeSheets();
+};
+$('findCancel').onclick=()=>{pending=null;closeSheets()};
+$('bFind').onclick=()=>{
+  if(S.me&&Date.now()-S.me.t<60000&&S.me.acc<60)openFind({lat:S.me.lat,lng:S.me.lng,src:'Position: dein Standort ±'+Math.round(S.me.acc)+' m'});
+  else{const c=map.getCenter();openFind({lat:c.lat,lng:c.lng,src:'Position: Kartenmitte (kein genaues GPS)'})}
+};
+map.on('contextmenu',e=>openFind({lat:e.latlng.lat,lng:e.latlng.lng,src:'Position: lange gedrückte Stelle'}));
+$('oFinds').addEventListener('change',drawFinds);
+
+/* ---------- Standort ---------- */
+const meIcon=L.divIcon({className:'',html:'<div class="meWrap"><svg class="meCone" viewBox="0 0 40 40"><path d="M20 39 L4 6 A20 20 0 0 1 36 6 Z" fill="rgba(28,126,214,.28)"/></svg><div class="meDot"></div></div>',iconSize:[18,18],iconAnchor:[9,9]});
+let meMarker=null,meCircle=null,watchId=null,wakeLock=null;
+function startWatch(){
+  if(watchId!=null||!navigator.geolocation)return;
+  watchId=navigator.geolocation.watchPosition(onPos,err=>{
+    if(err.code===1)toast('Standort nicht erlaubt. In iOS: Einstellungen › Datenschutz › Ortungsdienste › Safari-Websites.');
+  },{enableHighAccuracy:true,maximumAge:5000,timeout:20000});
+}
+let lastMoveFix=null;
+function onPos(p){
+  const c=p.coords;S.me={lat:c.latitude,lng:c.longitude,acc:c.accuracy,t:Date.now(),speed:c.speed};
+  const ll=[c.latitude,c.longitude];
+  if(!meMarker){meMarker=L.marker(ll,{icon:meIcon,zIndexOffset:1000,interactive:false}).addTo(map);meCircle=L.circle(ll,{radius:c.accuracy,color:getVar('--me'),weight:1,fillOpacity:.08,interactive:false}).addTo(map)}
+  else{meMarker.setLatLng(ll);meCircle.setLatLng(ll).setRadius(c.accuracy)}
+  if(S.follow)map.setView(ll,Math.max(map.getZoom(),15),{animate:true});
+  checkNsg();checkNsgOnline();updateCarNav();checkArrival();
+}
+function setFollow(on){
+  S.follow=on;$('bMe').classList.toggle('on',on);
+  if(on){
+    if('wakeLock' in navigator)navigator.wakeLock.request('screen').then(w=>wakeLock=w).catch(()=>{});
+  }else if(wakeLock){wakeLock.release().catch(()=>{});wakeLock=null}
+}
+$('bMe').onclick=()=>{
+  unlockAudio();startWatch();
+  if(S.follow){setFollow(false);return}
+  setFollow(true);
+  if(S.me)map.setView([S.me.lat,S.me.lng],Math.max(map.getZoom(),15));
+  else toast('Suche Standort …');
+};
+map.on('dragstart',()=>{if(S.follow)setFollow(false)});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&S.follow&&'wakeLock' in navigator)navigator.wakeLock.request('screen').then(w=>wakeLock=w).catch(()=>{})});
+
+/* Kompass */
+function onOrient(e){
+  let h=null;
+  if(typeof e.webkitCompassHeading==='number')h=e.webkitCompassHeading;
+  else if(e.absolute&&typeof e.alpha==='number')h=(360-e.alpha)%360;
+  if(h==null)return;
+  S.heading=h;
+  const cone=document.querySelector('.meCone');if(cone){cone.style.display='block';cone.style.transform='rotate('+h+'deg)'}
+  updateCarNav();
+}
+$('compassBtn').onclick=async()=>{
+  try{
+    if(typeof DeviceOrientationEvent!=='undefined'&&typeof DeviceOrientationEvent.requestPermission==='function'){
+      const r=await DeviceOrientationEvent.requestPermission();if(r!=='granted'){toast('Kompass nicht erlaubt');return}
+    }
+    window.addEventListener('deviceorientation',onOrient,true);
+    window.addEventListener('deviceorientationabsolute',onOrient,true);
+    $('compassBtn').textContent='Kompass aktiv';$('compassBtn').disabled=true;
+  }catch(e){toast('Kompass nicht verfügbar')}
+};
+
+/* ---------- NSG-Warnung ---------- */
+let inNsg=false,audioCtx=null;
+function unlockAudio(){try{if(!audioCtx){audioCtx=new (window.AudioContext||window.webkitAudioContext)()}if(audioCtx.state==='suspended')audioCtx.resume()}catch(e){}}
+function beep(){
+  try{if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.frequency.value=880;g.gain.value=.15;o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.25);
+    setTimeout(()=>{const o2=audioCtx.createOscillator();o2.frequency.value=660;o2.connect(g);o2.start();o2.stop(audioCtx.currentTime+.3)},320)}catch(e){}
+  if(navigator.vibrate)navigator.vibrate([200,100,200]);
+}
+/* Online: amtliche NSG-Punktabfrage (max. alle 30 s oder nach 50 m), offline: OSM-NSG aus dem Speicher */
+let nsgQ=null,nsgBusy=false;
+async function checkNsgOnline(){
+  if(!S.me||nsgBusy||!navigator.onLine)return;
+  const pt=[S.me.lat,S.me.lng];
+  if(nsgQ&&Date.now()-nsgQ.t<30000&&dist(pt,[nsgQ.lat,nsgQ.lng])<50)return;
+  nsgBusy=true;
+  try{
+    const j=await arcPointQuery(270,pt[0],pt[1]);
+    const ft=j.features||[];
+    nsgQ={t:Date.now(),lat:pt[0],lng:pt[1],hit:ft.length?{name:attrName(ft[0].attributes)||''}:null};
+    checkNsg();
+  }catch(e){/* Fallback OSM bleibt aktiv */}
+  finally{nsgBusy=false}
+}
+function checkNsg(){
+  if(!S.me)return;
+  const pt=[S.me.lat,S.me.lng];let hit=null,src;
+  if(nsgQ&&navigator.onLine&&Date.now()-nsgQ.t<120000&&dist(pt,[nsgQ.lat,nsgQ.lng])<100){hit=nsgQ.hit;src='amtlich, NLWKN'}
+  else{for(const f of S.nsg.values()){if(inFeature(pt,f)){hit={name:f.tags.name||''};break}}src='laut OpenStreetMap'}
+  if(hit&&!inNsg)beep();
+  inNsg=!!hit;$('warn').hidden=!hit;
+  $('warnName').textContent=hit?(hit.name?hit.name+' · ':'')+src:'';
+}
+document.addEventListener('touchstart',unlockAudio,{once:true,passive:true});
+
+/* ---------- Auto ---------- */
+let carMarker=null,carLine=null;
+const carIcon=L.divIcon({className:'',html:'<div class="carIcon"><svg viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v3H3z"/></svg></div>',iconSize:[30,30],iconAnchor:[15,15]});
+function drawCar(){
+  if(carMarker){map.removeLayer(carMarker);carMarker=null}
+  if(S.car)carMarker=L.marker([S.car.lat,S.car.lng],{icon:carIcon,pane:'finds'}).bindPopup('<b>Auto</b><br>abgestellt '+new Date(S.car.t).toLocaleString('de-DE',{weekday:'short',hour:'2-digit',minute:'2-digit'})+navBtns(S.car.lat,S.car.lng)).addTo(map);
+  $('carInfo').textContent=S.car?'Auto gemerkt am '+new Date(S.car.t).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})+'.':'Noch kein Auto gemerkt. Am Parkplatz „Auto hier merken“ tippen.';
+  $('bCar').classList.toggle('on',!!S.car);
+  updateCarNav();
+}
+function setCar(lat,lng){S.car={lat:rd(lat),lng:rd(lng),t:Date.now()};store.set('car',S.car);drawCar()}
+function updateCarNav(){
+  const show=!!(S.car&&S.me);$('carNav').hidden=!show;
+  if(carLine){map.removeLayer(carLine);carLine=null}
+  if(!show)return;
+  const a=[S.me.lat,S.me.lng],b=[S.car.lat,S.car.lng];
+  const d=dist(a,b),br=bearing(a,b);
+  $('carDist').textContent=fmtDist(d);
+  const rel=S.heading==null?br:(br-S.heading+360)%360;
+  $('carArrow').style.transform='rotate('+rel+'deg)';
+  $('carSub').textContent=(S.heading==null?'Richtung '+dirName(br)+' (Karte nach Norden)':'Pfeil zeigt zum Auto');
+  if(d>30)carLine=L.polyline([a,b],{color:getVar('--accent'),weight:2,dashArray:'4 6',interactive:false}).addTo(map);
+}
+$('bCar').onclick=()=>{drawCar();openSheet('sCar')};
+$('carSet').onclick=()=>{
+  if(S.me&&Date.now()-S.me.t<60000){setCar(S.me.lat,S.me.lng);toast('Auto gemerkt')}
+  else{const c=map.getCenter();setCar(c.lat,c.lng);toast('Kein GPS: Auto an der Kartenmitte gemerkt')}
+  closeSheets();startWatch();
+};
+$('carShow').onclick=()=>{if(S.car){closeSheets();map.setView([S.car.lat,S.car.lng],16)}};
+$('carDel').onclick=()=>{S.car=null;store.del('car');drawCar()};
+$('carNav').onclick=()=>{if(S.car&&S.me){map.fitBounds([[S.me.lat,S.me.lng],[S.car.lat,S.car.lng]],{padding:[60,60]})}};
+
+/* ---------- Regen (Open-Meteo) ---------- */
+async function loadRain(force){
+  const c=S.me&&Date.now()-S.me.t<600000?[S.me.lat,S.me.lng]:[map.getCenter().lat,map.getCenter().lng];
+  const cached=store.get('rain',null);
+  if(cached&&!force&&cached.p&&cached.p.length>=25&&Date.now()-cached.t<3*3600e3&&dist(cached.c,c)<15000){showRain(cached);return}
+  if(!navigator.onLine){if(cached)showRain(cached);return}
+  try{
+    const u='https://api.open-meteo.com/v1/forecast?latitude='+c[0].toFixed(3)+'&longitude='+c[1].toFixed(3)+'&daily=precipitation_sum,temperature_2m_mean&past_days=28&forecast_days=1&timezone=Europe%2FBerlin';
+    const r=await fetch(u);if(!r.ok)throw 0;const j=await r.json();
+    const d={c,t:Date.now(),days:j.daily.time,p:j.daily.precipitation_sum.map(v=>v||0),tm:j.daily.temperature_2m_mean};
+    store.set('rain',d);showRain(d);
+  }catch(e){if(cached)showRain(cached);else $('rainTxt').textContent='Regen: nicht verfügbar'}
+}
+function rainEval(d){
+  const n=d.p.length,full=d.p.slice(0,n-1);// ohne heute
+  const sum=(a,b)=>full.slice(Math.max(0,a),Math.max(0,b)).reduce((x,y)=>x+y,0);
+  const Ln=full.length,last7=sum(Ln-7,Ln),last10=sum(Ln-10,Ln),last14=sum(Ln-14,Ln);
+  // letzter ergiebiger Regen: ein Tag ab 5 mm oder zwei Tage zusammen ab 8 mm
+  let ev=-1;for(let i=Ln-1;i>=0;i--){if(full[i]>=5||(i>0&&full[i]+full[i-1]>=8)){ev=i;break}}
+  const since=ev<0?null:Ln-ev;
+  // Beginn dieser Regenphase und Regen in den 14 Tagen davor
+  let st=ev;while(st>0&&full[st-1]>=1)st--;
+  const pre=ev<0?0:sum(st-14,st);
+  const lag=pre<10?10:6;// nach Trockenheit brauchen Röhrlinge länger
+  const ready=ev<0?null:new Date(new Date(d.days[st]).getTime()+lag*864e5);
+  const t3=d.tm.slice(n-4,n-1).filter(v=>v!=null);const tAvg=t3.length?t3.reduce((a,b)=>a+b,0)/t3.length:null;
+  const fmt=x=>x.toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit'});
+  let lvl,txt;
+  if(tAvg!=null&&tAvg<4){lvl='low';txt='Kalt, Wachstum langsam'}
+  else if(ev<0||last14<10){lvl='low';txt='Zu trocken'}
+  else if(ready&&Date.now()<ready.getTime()){lvl='mid';txt='Regen frisch, Pilze ab ca. '+fmt(ready)}
+  else if(since<=16&&last14>=15){lvl='good';txt='Gute Bedingungen'}
+  else if(since>16){lvl='low';txt='Länger kein Regen'}
+  else{lvl='mid';txt='Mäßige Bedingungen'}
+  return {last7,last10,last14,since,pre,ready,tAvg,lvl,txt};
+}
+function showRain(d){
+  const e=rainEval(d);
+  const col={good:'--good',mid:'--mid',low:'--low'}[e.lvl];
+  $('rainLvl').style.background=getVar(col);
+  $('rainTxt').innerHTML='<b>'+e.txt+'</b> · '+Math.round(e.last7)+' mm/7 T';
+  $('rainVerdict').innerHTML='<b>'+e.txt+'</b>';
+  const p11=d.p.slice(-11),days11=d.days.slice(-11),n=p11.length,max=Math.max(5,...p11);
+  $('rainBars').innerHTML=p11.map((v,i)=>'<div><span style="height:'+Math.round(v/max*48)+'px"></span>'+(v>=1?Math.round(v):'')+'<br>'+(i===n-1?'heute':new Date(days11[i]).toLocaleDateString('de-DE',{weekday:'short'}).slice(0,2))+'</div>').join('');
+  $('rainKv').innerHTML='<dt>Regen letzte 7 Tage</dt><dd>'+e.last7.toFixed(1).replace('.',',')+' mm</dd>'+
+    '<dt>Regen letzte 14 Tage</dt><dd>'+e.last14.toFixed(1).replace('.',',')+' mm</dd>'+
+    '<dt>Regen in den 2 Wochen davor</dt><dd>'+e.pre.toFixed(1).replace('.',',')+' mm'+(e.pre<10?' (trocken)':'')+'</dd>'+
+    (e.ready?'<dt>Pilze ab etwa</dt><dd>'+e.ready.toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit'})+'</dd>':'')+
+    '<dt>Letzter Regentag ≥ 5 mm</dt><dd>'+(e.since==null?'länger her':'vor '+e.since+' Tag'+(e.since===1?'':'en'))+'</dd>'+
+    '<dt>Mitteltemperatur 3 Tage</dt><dd>'+(e.tAvg==null?'–':e.tAvg.toFixed(1).replace('.',',')+' °C')+'</dd>'+
+    '<dt>Stand</dt><dd>'+new Date(d.t).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})+'</dd>';
+}
+$('rainChip').onclick=()=>openSheet('sRain');
+$('rainReload').onclick=()=>loadRain(true);
+
+/* ---------- Kacheln vorladen ---------- */
+function lon2x(l,z){return Math.floor((l+180)/360*2**z)}
+function lat2y(l,z){const r=rad(l);return Math.floor((1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*2**z)}
+function tileUrls(tpl,b,z0,z1){
+  const out=[];
+  for(let z=z0;z<=z1;z++){
+    const x0=lon2x(b.getWest(),z),x1=lon2x(b.getEast(),z),y0=lat2y(b.getNorth(),z),y1=lat2y(b.getSouth(),z);
+    for(let x=x0;x<=x1;x++)for(let y=y0;y<=y1;y++)out.push(fillTileUrl(tpl,x,y,z));
+  }
+  return out;
+}
+async function preload(){
+  if(!('caches' in window)){$('preTxt').textContent='Dieser Browser unterstützt keinen Kachel-Speicher.';return}
+  if(!navigator.onLine){$('preTxt').textContent='Keine Verbindung.';return}
+  const b=map.getBounds().pad(.3);
+  const z0=Math.max(11,map.getZoom()-2);
+  const sel=[['osm','pOsm'],['sat','pSat'],['dop','pDop'],['topo','pTopo'],['s2','pS2']].filter(x=>$(x[1]).checked).map(x=>x[0]);
+  if(!sel.length&&!$('pArc').checked){$('preTxt').textContent='Bitte mindestens eine Ebene wählen.';return}
+  let urls=[];
+  for(const k of sel){
+    let z1=Math.min(17,BASES[k].max);let u=tileUrls(BASES[k].url,b,z0,z1);
+    while(u.length>MAX_TILES&&z1>z0){z1--;u=tileUrls(BASES[k].url,b,z0,z1)}
+    urls=urls.concat(u);
+  }
+  if($('pArc').checked){
+    const act=[dltLayer].concat(Object.values(nlwknLayers),Object.values(spLayers)).filter(l=>map.hasLayer(l));
+    for(const l of act){
+      let z1=Math.min(16,map.getZoom()+1);const mk=z=>{const o=[];const x0=lon2x(b.getWest(),z),x1=lon2x(b.getEast(),z),y0=lat2y(b.getNorth(),z),y1=lat2y(b.getSouth(),z);for(let x=x0;x<=x1;x++)for(let y=y0;y<=y1;y++)o.push(l.getTileUrl({x,y,z}));return o};
+      let u=[];for(let z=z0;z<=z1;z++)u=u.concat(mk(z));
+      while(u.length>MAX_TILES/2&&z1>z0){z1--;u=[];for(let z=z0;z<=z1;z++)u=u.concat(mk(z))}
+      urls=urls.concat(u);
+    }
+  }
+  $('preBtn').disabled=true;$('preProg').hidden=false;
+  const bar=$('preProg').firstElementChild;
+  const cache=await caches.open(TILE_CACHE);
+  let done=0,fail=0,skip=0;const total=urls.length;
+  $('preTxt').textContent='Lade '+total+' Kacheln …';
+  const q=urls.slice();
+  async function worker(){
+    while(q.length){
+      const u=q.shift();
+      try{
+        if(await cache.match(u)){skip++}
+        else{const r=await fetch(u,{mode:'cors'});if(r.ok)await cache.put(u,r);else fail++}
+      }catch(e){
+        try{const r=await fetch(u,{mode:'no-cors'});await cache.put(u,r)}catch(e2){fail++}
+      }
+      done++;bar.style.width=(done/total*100)+'%';
+      if(done%25===0)$('preTxt').textContent=done+' von '+total+' Kacheln';
+    }
+  }
+  await Promise.all([1,2,3,4,5,6].map(worker));
+  await loadOsm(true);await updateSat();await loadRain(true);
+  $('preTxt').textContent='Fertig: '+(total-fail)+' Kacheln gespeichert'+(skip?' ('+skip+' waren schon da)':'')+(fail?', '+fail+' fehlgeschlagen':'')+'. Wald-Daten und Regen sind ebenfalls gespeichert.';
+  $('preBtn').disabled=false;
+  return {total,fail};
+}
+$('preBtn').onclick=preload;
+$('preClear').onclick=async()=>{
+  if($('preClear').dataset.armed){
+    try{await caches.delete(TILE_CACHE)}catch(e){}
+    S.loaded.forEach(l=>store.del('area_'+l.k));S.loaded=[];store.set('loadedBoxes',[]);S.forests.clear();S.nsg.clear();S.rasters.clear();drawAmpel();drawNsg();
+    $('preTxt').textContent='Kachel- und Wald-Speicher geleert. Fundstellen und Auto bleiben erhalten.';
+    delete $('preClear').dataset.armed;$('preClear').textContent='Speicher leeren';$('preClear').classList.remove('danger');
+  }else{$('preClear').dataset.armed='1';$('preClear').textContent='Wirklich leeren?';$('preClear').classList.add('danger')}
+};
+
+/* ---------- Gebiete & Pilztag ---------- */
+function buildAreas(){
+  const box=$('areaList');box.innerHTML='';
+  AREAS.forEach(a=>{
+    const el=document.createElement('div');el.className='area';
+    el.innerHTML='<div class="n"><b>'+esc(a.name)+'</b><small>'+esc(a.sub)+'</small></div><button class="btn small" type="button">Hin</button><button class="btn small pri" type="button">Pilztag</button>';
+    const [go,day]=el.querySelectorAll('button');
+    go.onclick=()=>{closeSheets();setFollow(false);map.setView(a.c,a.z)};
+    day.onclick=()=>startPilztag(a);
+    box.appendChild(el);
+  });
+}
+async function startPilztag(a){
+  closeSheets();setFollow(false);map.setView(a.c,13);
+  S.pilztag={area:a,asked:false};
+  await new Promise(r=>setTimeout(r,600));
+  toast('Pilztag '+a.name+': lade Daten für unterwegs …');
+  $('pOsm').checked=true;$('pSat').checked=true;
+  const res=await preload();
+  toast(res?'Pilztag bereit. Kacheln, Wald-Daten und Regen sind gespeichert.':'Pilztag: Vorladen nicht möglich.');
+  startWatch();
+}
+function checkArrival(){
+  const p=S.pilztag;if(!p||p.asked||!S.me)return;
+  if(dist([S.me.lat,S.me.lng],p.area.c)<4000&&(S.me.speed==null||S.me.speed<2)){
+    if(!p.slowSince)p.slowSince=Date.now();
+    if(Date.now()-p.slowSince>45000){
+      p.asked=true;
+      showBanner('Angekommen in '+p.area.name+'? Auto hier merken.',()=>{setCar(S.me.lat,S.me.lng);toast('Auto gemerkt')});
+    }
+  }else if(p)p.slowSince=null;
+}
+function showBanner(txt,yes){
+  $('bannerTxt').textContent=txt;$('banner').hidden=false;
+  $('bannerYes').onclick=()=>{$('banner').hidden=true;yes()};
+  $('bannerNo').onclick=()=>{$('banner').hidden=true};
+}
+
+/* ---------- Export / Import ---------- */
+$('expBtn').onclick=async()=>{
+  const data=JSON.stringify({app:'pilzkarte',version:1,exported:new Date().toISOString(),finds:S.finds,car:S.car},null,1);
+  const name='pilzkarte_backup_'+new Date().toISOString().slice(0,10)+'.json';
+  const file=new File([data],name,{type:'application/json'});
+  try{
+    if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:name});$('ioTxt').textContent='Exportiert: '+name;return}
+  }catch(e){if(e&&e.name==='AbortError')return}
+  const a=document.createElement('a');a.href=URL.createObjectURL(file);a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);$('ioTxt').textContent='Exportiert: '+name;
+};
+$('impFile').addEventListener('change',async e=>{
+  const f=e.target.files[0];if(!f)return;
+  try{
+    const j=JSON.parse(await f.text());if(j.app!=='pilzkarte'||!Array.isArray(j.finds))throw 0;
+    const ids=new Set(S.finds.map(x=>x.id));let n=0;
+    for(const x of j.finds){if(x&&x.id&&typeof x.lat==='number'&&typeof x.lng==='number'&&!ids.has(x.id)){S.finds.push(x);n++}}
+    if(j.car&&!S.car){S.car=j.car;store.set('car',S.car);drawCar()}
+    saveFinds();$('ioTxt').textContent=n+' Fundstellen importiert.';
+  }catch(err){$('ioTxt').textContent='Die Datei ist keine Pilzkarte-Sicherung.'}
+  e.target.value='';
+});
+
+/* ---------- Sheets & UI ---------- */
+function openSheet(id){closeSheets(true);$('scrim').hidden=false;$(id).hidden=false}
+function closeSheets(keepScrim){document.querySelectorAll('.sheet').forEach(s=>s.hidden=true);if(!keepScrim)$('scrim').hidden=true}
+$('scrim').onclick=()=>{pending=null;closeSheets()};
+$('bLayers').onclick=()=>openSheet('sLayers');
+$('bAreas').onclick=()=>openSheet('sAreas');
+$('bMenu').onclick=()=>{drawFinds();openSheet('sMenu')};
+document.querySelectorAll('#baseSeg button').forEach(b=>b.onclick=()=>setBase(b.dataset.b));
+function setMode(m){S.mode=m;store.set('mode',m);document.querySelectorAll('#modeSeg button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));drawAmpel()}
+document.querySelectorAll('#modeSeg button').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+$('opac').value=S.opac;$('opac').addEventListener('input',e=>{S.opac=+e.target.value;store.set('opac',S.opac);drawAmpel()});
+$('oAmpel').checked=ampelOn;$('oAmpel').addEventListener('change',e=>{ampelOn=e.target.checked;store.set('ampelOn',ampelOn);drawAmpel();if(ampelOn)loadOsm()});
+$('oSatFill').checked=satFillOn;$('oSatFill').addEventListener('change',e=>{satFillOn=e.target.checked;store.set('satFillOn',satFillOn);drawAmpel();if(satFillOn)updateSat()});
+/* ---------- Fichten- und Kiefernwälder (Thünen-Baumartenkarte) ---------- */
+const THUENEN_URL='https://atlas.thuenen.de/geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=geonode:Dominant_Species_Class&STYLES=&SRS=EPSG:3857&WIDTH=256&HEIGHT=256&FORMAT=image/png&TRANSPARENT=true&BBOX={bbox}';
+const SP_NATIVE=15;
+/* Farben im Thünen-PNG: Fichte #CD8673, Kiefer #DE1317 -> eigene Farben */
+const SPECIES={fi:{src:[205,134,115],col:[21,101,192],name:'Fichte'},ki:{src:[222,19,23],col:[156,39,176],name:'Kiefer'}};
+const spPix=new Map();// URL -> Promise<ImageData>, von beiden Ebenen geteilt
+function speciesPixels(url){
+  if(!spPix.has(url)){
+    if(spPix.size>400)spPix.delete(spPix.keys().next().value);
+    spPix.set(url,cachedImageBlob(url).then(async b=>{
+      if(!b)throw new Error('offline');
+      const cv=document.createElement('canvas');cv.width=cv.height=256;const cx=cv.getContext('2d',{willReadFrequently:true});
+      const bm=await createImageBitmap(b);cx.drawImage(bm,0,0,256,256);bm.close&&bm.close();
+      return cx.getImageData(0,0,256,256);
+    }).catch(e=>{spPix.delete(url);throw e}));
+  }
+  return spPix.get(url);
+}
+const SpeciesTiles=L.GridLayer.extend({
+  initialize(k,opts){this._sp=SPECIES[k];L.GridLayer.prototype.initialize.call(this,opts)},
+  getTileUrl(c){const d=Math.max(0,c.z-SP_NATIVE);return fillTileUrl(THUENEN_URL,c.x>>d,c.y>>d,c.z-d)},
+  createTile(c,done){
+    const cv=document.createElement('canvas');cv.width=cv.height=256;
+    speciesPixels(this.getTileUrl(c)).then(src=>{
+      const out=new ImageData(256,256),a=src.data,o=out.data,[r0,g0,b0]=this._sp.src,[r1,g1,b1]=this._sp.col;
+      for(let i=0;i<a.length;i+=4){
+        if(a[i+3]>100&&Math.abs(a[i]-r0)+Math.abs(a[i+1]-g0)+Math.abs(a[i+2]-b0)<40){o[i]=r1;o[i+1]=g1;o[i+2]=b1;o[i+3]=230}
+      }
+      cv.getContext('2d').putImageData(out,0,0);done(null,cv);
+    },e=>done(e,cv));
+    return cv;
+  }
+});
+map.createPane('species').style.zIndex=415;
+const spLayers={
+  fi:new SpeciesTiles('fi',{pane:'species',opacity:.8,minZoom:10,maxNativeZoom:SP_NATIVE,maxZoom:19,attribution:'Fichte/Kiefer © Thünen-Institut 2017/18'}),
+  ki:new SpeciesTiles('ki',{pane:'species',opacity:.8,minZoom:10,maxNativeZoom:SP_NATIVE,maxZoom:19,attribution:'Fichte/Kiefer © Thünen-Institut 2017/18'})
+};
+const spOn=store.get('spOn',{fi:false,ki:false});
+function setSpecies(k,on){
+  spOn[k]=on;store.set('spOn',spOn);
+  on?spLayers[k].addTo(map):map.removeLayer(spLayers[k]);
+  $(k==='fi'?'legFi':'legKi').hidden=!on;
+  if(on&&map.getZoom()<10)toast('Fichten-/Kiefernwälder erscheinen ab Zoomstufe 10. Bitte näher heranzoomen.');
+}
+[['fi','oFi'],['ki','oKi']].forEach(([k,id])=>{
+  $(id).checked=spOn[k];if(spOn[k]){spLayers[k].addTo(map);$(k==='fi'?'legFi':'legKi').hidden=false}
+  $(id).addEventListener('change',e=>setSpecies(k,e.target.checked));
+});
+let dltOn=store.get('dltOn',false);
+$('oDlt').checked=dltOn;if(dltOn)dltLayer.addTo(map);
+$('oDlt').addEventListener('change',e=>{dltOn=e.target.checked;store.set('dltOn',dltOn);dltOn?dltLayer.addTo(map):map.removeLayer(dltLayer)});
+$('oNsg').checked=nsgOn;$('oNsg').addEventListener('change',e=>{nsgOn=e.target.checked;store.set('nsgOn',nsgOn);drawNsg()});
+let toastEl=null,toastT;
+function toast(t){
+  if(!toastEl){toastEl=document.createElement('div');toastEl.className='chip';toastEl.style.cssText='position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 100px);z-index:1400;max-width:90vw';document.body.appendChild(toastEl)}
+  toastEl.textContent=t;toastEl.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>toastEl.hidden=true,3500);
+}
+const mq=window.matchMedia('(prefers-color-scheme: dark)');
+mq.addEventListener&&mq.addEventListener('change',()=>{for(const k in cssCache)delete cssCache[k];drawAmpel();drawNsg()});
+window.addEventListener('online',()=>{loadOsm();updateSat()});
+
+/* ---------- Start ---------- */
+loadCachedAreas();
+setMode(S.mode);
+drawNsg();drawFinds();drawCar();buildAreas();
+loadOsm();loadRain();
+if(ampelOn)updateSat();
+startWatch();
+if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+})();
+</script>
+</body>
+</html>
