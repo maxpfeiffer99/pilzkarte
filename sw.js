@@ -1,10 +1,12 @@
-// Service Worker für pilzkarte_v15.html: hält die Seite und die Kartenbibliothek offline bereit
+// Service Worker der Pilzkarte: hält die Seite und die Kartenbibliothek offline bereit
 // und liefert vorgeladene Kartenkacheln aus dem Speicher.
-const SHELL='pk-shell-v15', TILES='pk-tiles-v1', PAGE='./pilzkarte_v15.html';
+// Die Web-App startet immer pilzkarte.html; diese Datei ist eine Kopie der neuesten Version (aktuell v17).
+// Seiten kommen mit Netz immer frisch vom Server (network first), nur ohne Netz aus dem Speicher.
+const SHELL='pk-shell-v17', TILES='pk-tiles-v1', PAGE='./pilzkarte.html';
 const LIBS=['https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css','https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(SHELL).then(c=>Promise.all(
-    [PAGE,'./index.html',...LIBS].map(u=>fetch(u,{mode:u.startsWith('http')?'cors':'same-origin'}).then(r=>r.ok&&c.put(u,r)).catch(()=>{}))
+    [PAGE,'./index.html','./manifest.webmanifest',...LIBS].map(u=>fetch(u,{mode:u.startsWith('http')?'cors':'same-origin',cache:'reload'}).then(r=>r.ok&&c.put(u,r)).catch(()=>{}))
   )));
   self.skipWaiting();
 });
@@ -15,7 +17,8 @@ self.addEventListener('activate',e=>e.waitUntil(
 self.addEventListener('fetch',e=>{
   const r=e.request;if(r.method!=='GET')return;
   if(r.mode==='navigate'){
-    e.respondWith(fetch(r).then(res=>{const cp=res.clone();caches.open(SHELL).then(c=>c.put(r,cp));return res})
+    // am Browser-Cache vorbei beim Server nachfragen, damit eine neue Version sofort ankommt
+    e.respondWith(fetch(r.url,{cache:'no-cache',credentials:'same-origin'}).then(res=>{if(res.ok){const cp=res.clone();caches.open(SHELL).then(c=>c.put(r.url,cp))}return res})
       .catch(()=>caches.open(SHELL).then(c=>c.match(r,{ignoreSearch:true}).then(m=>m||c.match(PAGE)))));
     return;
   }
