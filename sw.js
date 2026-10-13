@@ -1,8 +1,8 @@
 // Service Worker der Pilzkarte: hält die Seite und die Kartenbibliothek offline bereit
 // und liefert vorgeladene Kartenkacheln aus dem Speicher.
-// Die Web-App startet immer pilzkarte.html; diese Datei ist eine Kopie der neuesten Version (aktuell v18).
+// Die Web-App startet immer pilzkarte.html; diese Datei ist eine Kopie der neuesten Version (aktuell v19).
 // Seiten kommen mit Netz immer frisch vom Server (network first), nur ohne Netz aus dem Speicher.
-const SHELL='pk-shell-v18', TILES='pk-tiles-v1', PAGE='./pilzkarte.html';
+const SHELL='pk-shell-v19', TILES='pk-tiles-v1', PAGE='./pilzkarte.html';
 const LIBS=['https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css','https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(SHELL).then(c=>Promise.all(
